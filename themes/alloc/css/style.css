@@ -1,0 +1,54 @@
+.youtube-video {
+	text-align: center;
+	max-width: 100%;
+}
+
+pre {
+  font-size: 10px;
+}
+
+h1, h2, h3, h4, p, dateline {
+  color: #4A4A4A;
+}
+
+body {
+  margin-left: 1em;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 0em;
+  margin-top: 0.5em;
+}
+
+h4 {
+  font-size: 1em;
+  margin-top: 0em;
+  margin-bottom: 2em;
+}
+
+hr {
+  color: #CCCCCC;
+  border-width: 0.5px;
+  border-style: solid;
+}
+
+a {
+  color: #4E92DF;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+footer {
+  text-align: center;
+}
+
+.banner {
+  text-align: center;
+}
