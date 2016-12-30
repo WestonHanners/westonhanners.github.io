@@ -1,0 +1,11 @@
+#/bin/bash
+echo "*** Fixing Files..."
+find . -type f -exec chmod 644 {} \; 
+echo "*** Fixing Directories..."
+find . -type d -exec chmod 755 {} \;
+echo "*** Fixing PhileCMS"
+chmod 777 content lib/cache lib/datastorage
+echo "*** Fixing .htaccess"
+chmod 644 .htaccess
+echo "*** Fixing Fix Permissions..."
+chmod +x fixpermissions
