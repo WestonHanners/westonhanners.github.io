@@ -1,0 +1,63 @@
+/* Change background color of links on hover */
+ul.navbar li a:hover {color: #4E92DF;}
+
+/* Remove margins and padding from the list, and add a black background color */
+ul.navbar {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    justify-content: center;
+}
+
+/* Float the list items side by side */
+ul.navbar li {float: left;}
+
+/* Style the links inside the list items */
+ul.navbar li a {
+    display: inline-flex;
+    text-align: center;
+    padding: 14px 16px;
+    transition: 0.3s;
+    color: #4A4A4A;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: Hack, monospace; 
+    text-decoration: none;
+    text-transform: lowercase;
+}
+
+/* Hide the list item that contains the link that should open and close the navbar on small screens */
+ul.navbar li.icon {display: none;}
+
+/* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the navbar (li.icon) */
+@media screen and (max-width:700px) {
+    ul.navbar {
+        display: block;
+        justify-content: none;
+    }
+  ul.navbar li:not(:first-child) {display: none;}
+  ul.navbar li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+/* The "responsive" class is added to the navbar with JavaScript when the user clicks on the icon. This class makes the navbar look good on small screens */
+@media screen and (max-width:700px) {
+  ul.navbar.responsive {position: relative;}
+  ul.navbar.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.navbar.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.navbar.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
