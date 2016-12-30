@@ -7,6 +7,15 @@ h1, h2, h3, h4, p, dateline {
   color: #4A4A4A;
 }
 
+a {
+  color: #4E92DF;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0097F9;
+}
+
 body {
   margin-left: 1em;
 }
@@ -24,52 +33,31 @@ body {
   text-align: center;
 }
 
-footer a, footer p {
-  text-decoration: none;
-  font-family: Hack, monospace; 
-  text-transform: lowercase;
-}
-
 h1 {  
-  font-size: calc(16px + 1.5vw);
-  /*font-size: 3em;*/
-  margin-bottom: 0em;
-  margin-top: 0.5em;
-}
-
-h1 a {
-    text-decoration: none;
+  font-size: calc(17px + 1vw);
+  margin-bottom: 0px;
+  margin-top: 20px;
 }
 
 h2 {
-    font-size: calc(12px + 1.5vw);
+    font-size: calc(12px + 1vw);
 }
 
 h4 {
-  font-size: calc(10px + 1vw);
-  font-size: 1em;
-  margin-top: 0em;
-  margin-bottom: 2em;
+  font-size: calc(10px + 0.5vw);
+  margin-top: 0px;
+  margin-bottom: 40px;
   text-transform: uppercase;
 }
 
-p {
-  font-size: calc(10px + 1vw); 
+#content.p {
+  font-size: calc(14px + 1vw); 
 }
 
 hr {
   color: #CCCCCC;
   border-width: 0.5px;
   border-style: solid;
-}
-
-a {
-  color: #4E92DF;
-  text-decoration: none;
-}
-
-.youtube-video {
-  text-align: center;
 }
 
 iframe {
@@ -80,9 +68,16 @@ img {
   max-width: 100%;
 }
 
-footer {
+.youtube-video {
   text-align: center;
+}
+
+.footer {
+  text-align: center;
+  font-weight: bold;
   font-size: 10px;
+  font-family: Hack, monospace; 
+  text-transform: lowercase;
 }
 
 .banner {
