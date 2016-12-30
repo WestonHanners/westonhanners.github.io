@@ -52,7 +52,7 @@ class DefaultSnippets extends Snippets {
 	/**
 	 * Implements the 'image' snippet
 	 */
-	public function image($image, $width=null, $height=null, $alt=null, $class=null, $link=null, $caption=null, $srcset=null) {
+	public function image($image, $width=null, $height=null, $alt=null, $class=null, $link=null, $caption=null, $srcset=null, $divclass=null) {
 		$image = $this->getLink($image);
 		$attributes = $this->getHtmlAttributes(array(
 			'width'=>$width,
@@ -63,7 +63,7 @@ class DefaultSnippets extends Snippets {
 			'srcset'=>$srcset
 		));
 
-		$img = "<img src='$image'$attributes />";
+		$img = "<div class='$divclass'><img src='$image'$attributes /></div>";
 		if (!is_null($link)) {
 			$link = $this->getLink($link);
 			return "<a href='$link'>$img</a>";

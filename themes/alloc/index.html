@@ -7,11 +7,13 @@
 </header>
 <section id="content">
   <div class="inner">
-  {% for item in navigation.blog.children %}
-  {% if not item.meta.draft %}
+  {% set articles = 2 %}
+  {% for page in pages %}
+  {% if page.meta.blog and articles > 0 %}
+  {% set articles = articles - 1 %}
   <ul>
-    <h1><a href={{ item.url }}>{{ item.meta.title }}</a></h1>
-    <p>{{ item.meta.description }}</p>
+    <h1><a href={{ page.url }}>{{ page.meta.title }}</a></h1>
+    <p>{{ page.meta.description }}</p>
   </ul>
   {% endif %}
   {% endfor %}

@@ -48,7 +48,7 @@ $config['date_format'] = 'jS M Y';
  * - "meta.title" sort by meta title ascending
  * - "page.folder:asc meta.date:desc" sort by folder-name first and by date withing folders
  */
-$config['pages_order'] = 'meta.title:desc';
+$config['pages_order'] = 'meta.date:desc';
 
 /**
  * timezone

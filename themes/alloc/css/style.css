@@ -1,4 +1,5 @@
 pre {
+  white-space: pre-wrap; 
   font-size: 10px;
 }
 
@@ -10,16 +11,60 @@ body {
   margin-left: 1em;
 }
 
-h1 {
-  font-size: 3em;
+.centerimage {
+  text-align: center;
+}
+
+#content {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#navigation {
+  text-align: center;
+}
+
+footer a, footer p {
+  text-decoration: none;
+  font-family: Hack, monospace; 
+  text-transform: lowercase;
+}
+
+#navigation a {
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: calc(10px + 1vw);
+  color: #4A4A4A;
+  text-transform: lowercase;
+  font-family: Hack, monospace; 
+}
+
+h1 {  
+  font-size: calc(16px + 1.5vw);
+  /*font-size: 3em;*/
   margin-bottom: 0em;
   margin-top: 0.5em;
 }
 
+h1 a {
+    text-decoration: none;
+}
+
+h2 {
+    font-size: calc(14px + 1.5vw);
+}
+
 h4 {
+  font-size: calc(10px + 1.5vw);
   font-size: 1em;
   margin-top: 0em;
   margin-bottom: 2em;
+}
+
+p {
+  font-size: calc(10px + 1vw); 
 }
 
 hr {

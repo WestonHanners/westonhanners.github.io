@@ -1,4 +1,14 @@
 <div class="banner">
+	<a href="./">
 	<img src="{{ content_url }}/images/{{ config.banner_image }}" />
+	</a>
+</div>
+<div id="navigation">
+	{% for page in pages %}
+	{% if page.meta.page %}
+	<a href={{ page.url }}>[{{ page.title }}]</a>
+	{% endif %}
+	{% endfor %}
+	<a href="https://www.github.com/kronusdark">[My Github]</a>
 </div>
 <hr />

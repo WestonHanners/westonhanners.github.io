@@ -4,13 +4,11 @@
 <body>
 <header id="header">
   {% include 'banner.html' %}
-  <h1>{{ meta.title }}</h1>
-  {% if meta.date %}
-  <h4>Published on {{ meta.date|date('jS M Y') }}</h4>
-  {% endif %}
 </header>
 <section id="content">
-  {{ content }}
+  <div class="inner">
+    {{ content }}
+  </div>
 </section>
 {% include 'footer.html' %}
 </body>
