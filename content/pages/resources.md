@@ -1,5 +1,5 @@
 <!--
-Title: iOS Developer Resources
+Title: Developer Resources
 Page: true
 Template: page
 -->

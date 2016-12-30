@@ -4,6 +4,7 @@
 <body>
 <header id="header">
   {% include 'banner.html' %}
+  <article>
   <h1>{{ meta.title }}</h1>
   {% if meta.date %}
   <h4>Published on {{ meta.date|date('jS M Y') }}</h4>
@@ -12,6 +13,7 @@
 <section id="content">
   {{ content }}
 </section>
+</article>
 {% include 'footer.html' %}
 </body>
 </html>
