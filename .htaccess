@@ -18,7 +18,7 @@
     RewriteEngine On
 
     # Change this path, if you have installed PhileCMS in a subdirectory of the website root.
-    # RewriteBase /
+    RewriteBase /beta
 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
