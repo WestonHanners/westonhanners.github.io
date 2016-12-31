@@ -6,7 +6,6 @@
   {% include 'banner.html' %}
 </header>
 <section id="content">
-  <div class="inner">
   {% set articles = 2 %}
   {% for page in pages %}
   {% if page.meta.blog and articles > 0 %}
@@ -17,7 +16,6 @@
   </ul>
   {% endif %}
   {% endfor %}
-  </div>
 </section>
 {% include 'footer.html' %}
 </body>

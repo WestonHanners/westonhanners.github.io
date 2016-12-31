@@ -15,10 +15,9 @@ ul.navbar li {float: left;}
 ul.navbar li a {
   display: flex;
   text-align: center;
-  padding: 14px 16px;
+  padding: 16px 16px;
   transition: 0.3s;
   color: #4A4A4A;
-  font-size: 17px;
   font-weight: bold;
   font-family: Hack, monospace; 
   text-decoration: none;
@@ -30,7 +29,6 @@ ul.navbar li.icon {
   display: none;
 }
 
-/* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the navbar (li.icon) */
 @media screen and (max-width:700px) {
 
   ul.navbar {
@@ -48,7 +46,6 @@ ul.navbar li.icon {
   }
 }
 
-/* The "responsive" class is added to the navbar with JavaScript when the user clicks on the icon. This class makes the navbar look good on small screens */
 @media screen and (max-width:700px) {
 
   ul.navbar.responsive {
