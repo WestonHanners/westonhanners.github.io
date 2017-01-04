@@ -35,17 +35,25 @@ body {
   margin: 20px;
 }
 
-.centerimage {
-  text-align: center;
-}
-
-#content {
+.content {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
+@media screen and (min-width:700px) {
+  .content {
+    margin: 0 auto;
+  }
+}
+
+.centerimage {
+  text-align: center;
+}
+
 ul {
   padding-left: 0px;
+  margin-left: 10px;
+  list-style: none;
 }
 
 h1 {
@@ -96,6 +104,10 @@ iframe {
 
 img {
   max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 strong {
