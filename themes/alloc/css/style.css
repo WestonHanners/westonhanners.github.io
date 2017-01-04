@@ -38,11 +38,15 @@ body {
 .content {
   margin-top: 10px;
   margin-bottom: 10px;
+  line-height: 150%;
+  font-size: 100%;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 @media screen and (min-width:700px) {
   .content {
-    margin: 0 auto;
+    margin: auto;
   }
 }
 
@@ -82,13 +86,6 @@ body {
   padding: 0;
   margin-left: 0;
   margin-right: 0;
-}
-
-#content {
-  line-height: 150%;
-  font-size: 100%;
-  margin-left: 16px;
-  margin-right: 16px;
 }
 
 hr {
