@@ -6,7 +6,7 @@
   {% include 'banner.html' %}
 </header>
 <section id="content">
-  {% set articles = 2 %}
+  {% set articles = 10 %}
   {% for page in pages %}
   {% if page.meta.blog and articles > 0 %}
   {% set articles = articles - 1 %}
