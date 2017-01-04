@@ -3,25 +3,29 @@
 	<img src="{{ content_url }}/images/{{ config.banner_image }}.png" srcset="{{ content_url }}/images/{{ config.banner_image }}2x.png"/>
 	</a>
 </div>
-	<ul id="topnav" class="navbar">
+<ul id="topnav" class="navbar">
 
-	<li>
-	<a href="./">[Home]</a>
-	</li>
+<li>
+<a href="./">[Home]</a>
+</li>
 
-	<!-- Dynamic Items -->
-	{% for page in pages %}
-	{% if page.meta.page %}
-	
-	<li><a href={{ page.url }}>[{{ page.title }}]</a></li>
-	
-	{% endif %}
-	{% endfor %}
-	<!-- End Dynamic Items -->
+<!-- Dynamic Items -->
+{% for page in pages %}
+{% if page.meta.page %}
 
-	<li class="icon">
-    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-  	</li>
+<li><a href={{ page.url }}>[{{ page.title }}]</a></li>
 
-	</ul>
+{% endif %}
+{% endfor %}
+<!-- End Dynamic Items -->
+
+<li><a href="https://twitter.com/WestonHanners">[Twitter]</a></li>
+
+<li><a href="https://github.com/kronusdark">[Github]</a></li>
+
+<li class="icon">
+<a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+</li>
+
+</ul>
 <hr />
