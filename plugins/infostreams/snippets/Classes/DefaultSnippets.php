@@ -94,7 +94,7 @@ class DefaultSnippets extends Snippets {
 	/**
 	 * Implements the 'youtube' snippet
 	 */
-	public function youtube($link, $width=480, $height=360) {
+	public function youtube($link, $width=480, $height=360, $class=null) {
 		$url = parse_url($link);
 		if (!array_key_exists('query', $url)) {
 			return "";
@@ -109,7 +109,7 @@ class DefaultSnippets extends Snippets {
 			$embed_url = "//www.youtube.com/embed/$video_id";
 		}
 
-		return "<div class=\"youtube-video\"><iframe width=\"$width\" height=\"$height\" src=\"$embed_url\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>";
+		return "<div class=\"$class\"><iframe width=\"$width\" height=\"$height\" src=\"$embed_url\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>";
 	}
 
 	/**
