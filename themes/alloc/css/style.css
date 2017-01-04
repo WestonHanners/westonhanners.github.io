@@ -36,18 +36,9 @@ body {
 }
 
 .content {
-  margin-top: 10px;
-  margin-bottom: 10px;
   line-height: 150%;
   font-size: 100%;
-  margin-left: 16px;
-  margin-right: 16px;
-}
-
-@media screen and (min-width:700px) {
-  .content {
-    margin: auto;
-  }
+  margin: 16px;
 }
 
 .centerimage {
@@ -125,4 +116,11 @@ strong {
 
 .banner {
   text-align: center;
+}
+
+@media screen and (min-width:700px) {
+  .content {
+    margin-left: 20%;
+    margin-right: 20%
+  }
 }

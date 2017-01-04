@@ -2,10 +2,10 @@
 <html lang="en">
 {% include 'header.html' %}
 <body>
-<header id="header">
+<header class="header">
   {% include 'banner.html' %}
 </header>
-<section id="content">
+<section class="content">
   {% set articles = 10 %}
   {% for page in pages %}
   {% if page.meta.blog and articles > 0 %}
