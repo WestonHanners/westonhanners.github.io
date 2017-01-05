@@ -14,6 +14,11 @@
   <meta property="og:description" content="{{ meta.description }}"/>
   <meta property="og:url" content="{{ current_page.url }}"/>
   <meta property="og:site_name" content="{{ site_title }}"/>
+  {% if meta.image %}
+  <meta name="og:image" content="{{ meta.image }}">
+  {% else %}
+  <meta name="og:image" content="{{ config.images_path }}/cropped-Alloc-Init-Logo-V2-1-192x192.png">
+  {% endif %}
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="{{ theme_url }}/css/style.css" type="text/css"/>
 	<link rel="stylesheet" href="{{ theme_url }}/css/prism.css" type="text/css"/>
@@ -23,6 +28,5 @@
   <link rel="icon" href="{{ config.images_path }}/cropped-Alloc-Init-Logo-V2-1-32x32.png" sizes="32x32" />
   <link rel="icon" href="{{ config.images_path }}/cropped-Alloc-Init-Logo-V2-1-192x192.png" sizes="192x192" />
   <link rel="apple-touch-icon-precomposed" href="{{ config.images_path }}/cropped-Alloc-Init-Logo-V2-1-180x180.png" />
-
   {{ incrementPageViews() }}
 </head>
