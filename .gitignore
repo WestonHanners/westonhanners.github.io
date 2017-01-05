@@ -1,3 +1,3 @@
 .htaccess
-./lib/datastorage/*
-./lib/cache/*
+lib/datastorage/*
+lib/cache/*
