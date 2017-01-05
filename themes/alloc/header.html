@@ -4,10 +4,10 @@
   <base href="{{ base_url }}/"/>
   <title>{% if meta.title %} {{ meta.title }} | {% endif %} {{ site_title }}</title>
   {% if meta.description %}
-  <meta name="description" content="{{ meta.description }}">
+  <meta name="description" content="{{ meta.description }}" />
   {% endif %}
   {% if meta.robots %}
-  <meta name="robots" content="{{ meta.robots }}">
+  <meta name="robots" content="{{ meta.robots }}" />
   {% endif %}
   <meta property="og:type" content="article"/>
   <meta property="og:title" content="{% if meta.title %} {{ meta.title }} | {% endif %} {{ site_title }}"/>
@@ -15,9 +15,9 @@
   <meta property="og:url" content="{{ current_page.url }}"/>
   <meta property="og:site_name" content="{{ site_title }}"/>
   {% if meta.image %}
-  <meta property="og:image" content="{{ meta.image }}">
+  <meta property="og:image" content="{{ meta.image }}" />
   {% else %}
-  <meta property="og:image" content="{{ config.images_path }}cropped-Alloc-Init-Logo-V2-1-192x192.png">
+  <meta property="og:image" content="{{ config.images_path }}cropped-Alloc-Init-Logo-V2-1-192x192.png" />
   {% endif %}
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="{{ theme_url }}/css/style.css" type="text/css"/>
