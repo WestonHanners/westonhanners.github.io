@@ -44,7 +44,7 @@ Blogs
 -   [Florian Kugler's Blog](http://floriankugler.com/blog "Florian Kugler's Blog")
 -   [Objc.io](http://www.objc.io "Objc.io")
 -   [Matt Galloway's Blog](http://www.galloway.me.uk "Matt Galloway's Blog")
--   [F\*ing Block Syntax](http://fuckingblocksyntax.com "F*ing Block Syntax") - Block yntax cheat sheet, URL is NSFW, but site is ok.
+-   [F\*ing Block Syntax](http://fuckingblocksyntax.com "F*ing Block Syntax") - Block syntax cheat sheet, URL is NSFW, but site is ok.
 -   [Hamster Emporium](http://sealiesoftware.com/blog/ "Hamster Emporium")
 -   [Borkware Blog](http://borkwarellc.wordpress.com "Borkware Blog")
 -   [We ❤ Swift](http://www.weheartswift.com "We Heart Swift")

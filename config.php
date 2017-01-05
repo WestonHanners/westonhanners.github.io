@@ -31,6 +31,7 @@ $config['theme'] = 'alloc';
  * demo plugin
  */
 // $config['plugins']['kronusdark\\philePaginator'] = ['active' => true];
+$config['plugins']['frodox\\phileCustomPostPreview'] = ['active' => true];
 $config['plugins']['infostreams\\snippets'] = ['active' => true];
 $config['plugins']['kronusdark\\prism'] = ['active' => true];
 $config['plugins']['gibbs\\phileSubNavigation'] = ['active' => true];

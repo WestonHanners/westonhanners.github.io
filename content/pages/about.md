@@ -6,12 +6,11 @@ Template: page
 
 (image: content/images/me.jpg alt: Mothership divclass: centerimage)
 
-My name is Weston Hanners and I am an iOS Engineer for [Y Media Labs](http://www.ymedialabs.com) in Downtown Indianapolis. 
+My name is Weston Hanners and I am an iOS Engineer for (link: http://www.ymedialabs.com text: Y Media Labs) in Downtown Indianapolis. 
 
-I am a male 30-something who is into Japan, Gaming, and Technology. I live with my wife and kids in southern Indiana. 
+I am a male 30-something who is interested Japan, Gaming, and Technology. 
 
-I am very interested in improving myself and with this blog I hope to educate others while I learn. 
-I can't really think of much else to stick here.
+The plan is to use this blog to share the things I learn with the world, I hope you find it as interesting as I do.
 
 Here are some places you can find me around the web:
 

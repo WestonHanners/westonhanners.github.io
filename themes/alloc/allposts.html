@@ -6,13 +6,14 @@
   {% include 'banner.html' %}
 </header>
 <section class="content">
-  <article>
-  <h1 class="article-title">{{ meta.title }}</h1>
-  {% if meta.date %}
-  <h4>Published on {{ meta.date|date('jS M Y') }}</h4>
+  {% set articles = 5 %}
+  {% for page in pages %}
+  {% if page.meta.blog %}
+  <ul>
+    <h1><a href={{ page.url }}>{{ page.meta.title }}</a></h1>
+  </ul>
   {% endif %}
-  {{ content }}
-  </article>
+  {% endfor %}
 </section>
 {% include 'footer.html' %}
 </body>

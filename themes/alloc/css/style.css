@@ -9,13 +9,17 @@ h1, h2, h3, h4, p, dateline {
 }
 
 a {
-  color: #4E92DF;
+  color: #4A4A4A;
   text-decoration: none;
 }
 
 p {
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+.content a {
+    color: #266AAF;
 }
 
 il {
@@ -42,22 +46,26 @@ ul {
 }
 
 h1 {
-  line-height: 120%;  
+  line-height: 120%;
   font-size: 200%;
   font-weight: bold;
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+    margin-bottom: 5px;
 }
 
 h2 {
   font-weight: bolder;
   font-size: 150%;
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 h4 {
-  font-size: calc(10px + 0.5vw);
+  font-size: 14px;
   margin-top: 0px;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -101,6 +109,16 @@ iframe {
   font-size: 10px;
   font-family: Hack, monospace; 
   text-transform: lowercase;
+}
+
+@media screen and (max-width:1000px) {
+  h1 {
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 12px;
+  }
 }
 
 @media screen and (min-width:1000px) {

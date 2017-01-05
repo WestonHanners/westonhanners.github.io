@@ -6,13 +6,16 @@
   {% include 'banner.html' %}
 </header>
 <section class="content">
-  {% set articles = 10 %}
+  {% set articles = 5 %}
   {% for page in pages %}
   {% if page.meta.blog and articles > 0 %}
   {% set articles = articles - 1 %}
   <ul>
-    <h1><a href={{ page.url }}>{{ page.meta.title }}</a></h1>
-    <p>{{ page.meta.description }}</p>
+    <h1 class="article-title"><a href={{ page.url }}>{{ page.meta.title }}</a></h1>
+        {% if page.meta.date %}
+        <h4>Published on {{ page.meta.date|date('jS M Y') }}</h4>
+        {% endif %}
+    <div>{{ page.content}}</div>
   </ul>
   {% endif %}
   {% endfor %}
