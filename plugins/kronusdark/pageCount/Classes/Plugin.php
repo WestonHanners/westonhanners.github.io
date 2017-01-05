@@ -34,8 +34,6 @@ class Plugin extends \Phile\Plugin\AbstractPlugin implements \Phile\Gateway\Even
 		$pageViews += 1;
 
 		$storage->set($_SERVER['REQUEST_URI'], $pageViews);
-
-		return $pageViews;
 	}
     	
 	public function on($eventKey, $data = null) 
