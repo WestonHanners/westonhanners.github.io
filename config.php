@@ -17,8 +17,6 @@ $config['encryptionKey'] = 'bos[}M78eaL)|xaisUU0ukkFdhoYf04TGjEbgKkfcsMVlxWV=CRY
  */
 $config['site_title'] = '...alloc] init];';
 $config['banner_image'] = 'banner';
-$config['images_path'] = 'content/images/';
-
 $config['pages_order'] = 'meta.date:desc';
 
 
