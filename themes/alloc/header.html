@@ -10,6 +10,9 @@
   <meta name="robots" content="{{ meta.robots }}">
   {% endif %}
   <meta property="og:type" content="article"/>
+  {% if meta.redirect %}
+  <meta http-equiv="refresh" content="0; url={{ meta.redirect }}" />
+  {% endif %}
   <meta property="og:title"
         content="{{ current_page.title }} | {{ site_title }}"/>
   <meta property="og:description" content="{{ meta.description }}"/>
