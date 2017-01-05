@@ -2,8 +2,7 @@
   <!-- Made with PhileCMS -->
   <meta charset="{{ config.charset }}"/>
   <base href="{{ base_url }}/"/>
-  <title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ site_title
-    }}</title>
+  <title>{% if meta.title %} {{ meta.title }} | {% endif %} {{ site_title }}</title>
   {% if meta.description %}
   <meta name="description" content="{{ meta.description }}">
   {% endif %}
@@ -11,11 +10,7 @@
   <meta name="robots" content="{{ meta.robots }}">
   {% endif %}
   <meta property="og:type" content="article"/>
-  {% if meta.redirect %}
-  <meta http-equiv="refresh" content="0; url={{ meta.redirect }}" />
-  {% endif %}
-  <meta property="og:title"
-        content="{{ current_page.title }} | {{ site_title }}"/>
+  <meta property="og:title" content="{% if meta.title %} {{ meta.title }} | {% endif %} {{ site_title }}"/>
   <meta property="og:description" content="{{ meta.description }}"/>
   <meta property="og:url" content="{{ current_page.url }}"/>
   <meta property="og:site_name" content="{{ site_title }}"/>
@@ -24,6 +19,7 @@
 	<link rel="stylesheet" href="{{ theme_url }}/css/prism.css" type="text/css"/>
   <link rel="stylesheet" href="{{ theme_url }}/css/navigation.css" type="text/css"/>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.020/css/hack-extended.min.css">
+  <link rel="icon" href="{{ config.images_path }}/cropped-Alloc-Init-Logo-V2-1-16x16.png" sizes="16x16" />
   <link rel="icon" href="{{ config.images_path }}/cropped-Alloc-Init-Logo-V2-1-32x32.png" sizes="32x32" />
   <link rel="icon" href="{{ config.images_path }}/cropped-Alloc-Init-Logo-V2-1-192x192.png" sizes="192x192" />
   <link rel="apple-touch-icon-precomposed" href="{{ config.images_path }}/cropped-Alloc-Init-Logo-V2-1-180x180.png" />
