@@ -1,0 +1,19 @@
+{
+    "name": "softr/phile-page-compressor",
+    "type": "phile-plugin",
+    "license": "MIT",
+    "description": "PhileCMS Page Compressor Plugin",
+    "homepage": "https://github.com/softr/philePageCompressor",
+    "keywords": ["cms", "phile", "plugin", "minify"],
+    "authors": [
+        {
+            "name": "Agência Softr",
+            "email": "contato@softr.com.br",
+            "homepage": "http://www.softr.com.br/"
+        }
+    ],
+    "require": {
+        "phile-cms/phile": ">=1.0",
+        "phile-cms/plugin-installer-plugin": ">=1.0"
+    }
+}

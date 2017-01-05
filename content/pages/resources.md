@@ -28,8 +28,8 @@ Videos
 -   [Harvard CS50](https://www.youtube.com/user/cs50tv)
 -   [Realm.io Apple Videos](https://realm.io/news/#apple)
 
-Blogs
------
+Blogs & Podcasts
+----------------
 
 -   [NSBlog - Mike Ash](http://www.mikeash.com/pyblog/ "Mike Ash's Blog")
 -   [Rapture in Venice](http://raptureinvenice.com "Rapture in Venice")
@@ -51,6 +51,7 @@ Blogs
 -   [This Week in Swift](https://swiftnews.curated.co) - Weekly newsletter about the goings on in the Swift community
 -   [Soroush Khanlou's Blog](http://khanlou.com) - I love some of his thoughts on view controllers
 -   [Ben Sandofsky's Blog](https://sandofsky.com)
+-   (link: https://fatalerror.fm text: Fatal Error Podcast)
 
 Books
 -----

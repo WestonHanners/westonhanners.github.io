@@ -5,5 +5,11 @@
 
 <div class="footer">
     [©2017 <a href="twitter.com/@WestonHanners">Weston Hanners</a>]
+    <br />
+    {% if pageViews() == 1 %}
+    [You are the first to view this page]
+    {% else %}
+    [This page viewed {{ pageViews() }} times]
+    {% endif %}
 </div>
 

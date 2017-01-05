@@ -4,12 +4,11 @@ pre {
   padding: 0;
 }
 
-h1, h2, h3, h4, p, dateline {
+h1, h2, h3, h4, p, dateline, a {
   color: #4A4A4A;
 }
 
 a {
-  color: #4A4A4A;
   text-decoration: none;
 }
 

@@ -26,15 +26,14 @@ $config['pages_order'] = 'meta.date:desc';
  * default theme
  */
 $config['theme'] = 'alloc';
+$config['page_compress_level'] = 1;
 
-/**
- * demo plugin
- */
-// $config['plugins']['kronusdark\\philePaginator'] = ['active' => true];
-// $config['plugins']['frodox\\phileCustomPostPreview'] = ['active' => true];
+
 $config['plugins']['infostreams\\snippets'] = ['active' => true];
 $config['plugins']['kronusdark\\prism'] = ['active' => true];
-// $config['plugins']['gibbs\\phileSubNavigation'] = ['active' => true];
-
+$config['plugins']['kronusdark\\pageCount'] = ['active' => true];
+$config['plugins']['softr\\pageCompressor'] = ['active' => true];
+$config['plugins']['phile\\phpFastCache'] = ['active' => true];
+$config['plugins']['phile\\simpleFileDataPersistence'] = ['active' => true];
 
 return $config;

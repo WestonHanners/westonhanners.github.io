@@ -6,7 +6,8 @@
     }}</title>
   {% if meta.description %}
   <meta name="description" content="{{ meta.description }}">
-  {% endif %}{% if meta.robots %}
+  {% endif %}
+  {% if meta.robots %}
   <meta name="robots" content="{{ meta.robots }}">
   {% endif %}
   <meta property="og:type" content="article"/>
@@ -26,4 +27,6 @@
   <link rel="icon" href="{{ config.images_path }}/cropped-Alloc-Init-Logo-V2-1-32x32.png" sizes="32x32" />
   <link rel="icon" href="{{ config.images_path }}/cropped-Alloc-Init-Logo-V2-1-192x192.png" sizes="192x192" />
   <link rel="apple-touch-icon-precomposed" href="{{ config.images_path }}/cropped-Alloc-Init-Logo-V2-1-180x180.png" />
+
+  {{ incrementPageViews() }}
 </head>
