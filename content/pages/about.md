@@ -6,7 +6,7 @@ Template: page
 
 (image: content/images/me.jpg alt: Mothership divclass: centerimage)
 
-My name is Weston Hanners and I am an iOS Engineer for 
+My name is Weston Hanners and I am a Senior iOS Engineer and aspiring Mobile UX Designer for 
 (link: http://www.ymedialabs.com text: Y Media Labs) in Downtown Indianapolis. 
 
 I am a male 30-something who is interested Japan, Gaming, and Technology. 
