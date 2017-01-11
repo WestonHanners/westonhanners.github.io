@@ -119,6 +119,10 @@ img {
   margin-top: 0px;
 }
 
+.bullet-list li {
+  list-style-type: disc;
+}
+
 .horizontal-list {
   display: block;
   text-align: center;
