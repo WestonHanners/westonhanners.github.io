@@ -3,3 +3,4 @@ lib/datastorage/*
 lib/cache/*
 .well-known
 piwik
+error_log
