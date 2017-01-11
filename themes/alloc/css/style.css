@@ -1,11 +1,41 @@
 pre {
   white-space: pre-wrap; 
-  font-size: 10px;
+  font-size: 0.8rem;
   padding: 0;
+  margin: 0;
 }
 
 h1, h2, h3, h4, p, dateline, a {
   color: #4A4A4A;
+}
+
+h1 {
+  line-height: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-weight: bolder;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+body {
+  background: #FFFCFD;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 a {
@@ -13,67 +43,24 @@ a {
 }
 
 p {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.content a {
-    color: #266AAF;
-}
-
-il {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  line-height: 1.5rem;
 }
 
 blockquote {
+  margin-left: 0;
+}
+
+blockquote p {
+  border-left: 0.2rem;
+  text-align: left;
+  border-color: #DADADA;
+  border-left-style: solid;
+  padding-left: 1rem;
   font-style: italic;
 }
 
 a:hover {
   color: #0097F9;
-}
-
-body {
-  margin: 20px;
-}
-
-ul {
-  padding-left: 0px;
-  margin-left: 10px;
-  list-style: none;
-}
-
-h1 {
-  line-height: 120%;
-  font-size: 200%;
-  font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.article-title {
-    margin-bottom: 5px;
-}
-
-h2 {
-  font-weight: bolder;
-  font-size: 150%;
-  margin-top: 20px;
-  margin-bottom: 15px;
-}
-
-h4 {
-  font-size: 14px;
-  margin-top: 0px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-body {
-  padding: 0;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 hr {
@@ -87,19 +74,9 @@ iframe {
   max-width: 100%;
 }
 
-.content {
-  line-height: 150%;
-  font-size: 100%;
-  margin: 16px;
-}
-
 blockquote {
   text-align: center;
   margin-top: 5px;
-}
-
-.banner img {
-  max-width: 100%;
 }
 
 img {
@@ -111,16 +88,28 @@ img {
   margin-top: 20px;
 }
 
-.inline-image p {
-  font-size: 10px;
-  text-align: center;
-  font-family: Hack, monospace; 
-  text-transform: lowercase;
-  margin-top: 0px;
+.content a {
+  color: #266AAF;
 }
 
-.bullet-list li {
-  list-style-type: disc;
+.content {
+  line-height: 2rem;
+  font-size: 100%;
+  margin: 16px;
+}
+
+.blog-list {
+  padding-left: 0rem;
+}
+
+.blog-item {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  list-style: none;
+}
+
+.article-title {
+    margin-bottom: 5px;
 }
 
 .horizontal-list {
@@ -144,12 +133,13 @@ img {
 
 @media screen and (max-width:1000px) {
   h1 {
-    font-size: 18px;
+    font-size: 1.5rem;
   }
 
   h4 {
-    font-size: 12px;
+    font-size: 0.8rem;
   }
+
 }
 
 @media screen and (min-width:1000px) {

@@ -28,7 +28,6 @@ $config['page_compress_level'] = 1;
 
 
 $config['plugins']['infostreams\\snippets'] = ['active' => true];
-$config['plugins']['kronusdark\\prism'] = ['active' => true];
 $config['plugins']['kronusdark\\pageCount'] = ['active' => true];
 $config['plugins']['softr\\pageCompressor'] = ['active' => true];
 $config['plugins']['phile\\phpFastCache'] = ['active' => true];
