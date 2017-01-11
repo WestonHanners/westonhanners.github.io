@@ -1,3 +1,5 @@
 .htaccess
 lib/datastorage/*
 lib/cache/*
+.well-known
+piwik
