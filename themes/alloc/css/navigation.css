@@ -29,7 +29,7 @@ ul.navbar li.icon {
   display: none;
 }
 
-@media screen and (max-width:700px) {
+@media screen and (max-width:800px) {
 
   ul.navbar {
     display: block;
@@ -46,7 +46,7 @@ ul.navbar li.icon {
   }
 }
 
-@media screen and (max-width:700px) {
+@media screen and (max-width:800px) {
 
   ul.navbar.responsive {
     position: relative;

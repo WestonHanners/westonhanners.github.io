@@ -93,13 +93,41 @@ iframe {
   margin: 16px;
 }
 
-.centerimage {
+blockquote {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.banner img {
+  max-width: 100%;
+}
+
+img {
   text-align: center;
   max-width: 100%;
   display: block;
   margin: 0 auto;
   margin-bottom: 20px;
   margin-top: 20px;
+}
+
+.inline-image p {
+  font-size: 10px;
+  text-align: center;
+  font-family: Hack, monospace; 
+  text-transform: lowercase;
+  margin-top: 0px;
+}
+
+.horizontal-list {
+  display: block;
+  text-align: center;
+}
+
+.horizontal-list a {
+  font-family: Hack, monospace; 
+  text-transform: lowercase;
+  padding: 16px 16px;
 }
 
 .footer {

@@ -54,16 +54,20 @@ class DefaultSnippets extends Snippets {
 	 */
 	public function image($image, $width=null, $height=null, $alt=null, $class=null, $link=null, $caption=null, $srcset=null, $divclass=null) {
 		$image = $this->getLink($image);
+
+		if ($divclass == null) {
+			$divclass = 'inline-image';
+		}
+
 		$attributes = $this->getHtmlAttributes(array(
 			'width'=>$width,
 			'height'=>$height,
 			'alt'=>$alt,
-			'caption'=>$caption,
 			'class'=>$class,
 			'srcset'=>$srcset
 		));
 
-		$img = "<div class='$divclass'><img src='$image'$attributes /></div>";
+		$img = "<div class='$divclass'><img src='$image'$attributes /><p>$caption</p></div>";
 		if (!is_null($link)) {
 			$link = $this->getLink($link);
 			return "<a href='$link'>$img</a>";
@@ -107,6 +111,10 @@ class DefaultSnippets extends Snippets {
 		} else {
 			$video_id = $query['v'];
 			$embed_url = "//www.youtube.com/embed/$video_id";
+		}
+
+		if ($class == null) {
+			$class = 'inline-image';
 		}
 
 		return "<div class=\"$class\"><iframe width=\"$width\" height=\"$height\" src=\"$embed_url\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>";
