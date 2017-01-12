@@ -68,14 +68,11 @@ hr {
   border-width: 0.5px;
   border-style: solid;
   margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 iframe {
   max-width: 100%;
-}
-
-blockquote {
-  margin-top: 0.5rem;
 }
 
 img {
@@ -93,7 +90,10 @@ img {
 
 .content {
   line-height: 2rem;
-  margin: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 .blog-list {
