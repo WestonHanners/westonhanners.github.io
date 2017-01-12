@@ -6,22 +6,22 @@
   {% include 'banner.html' %}
 </header>
 <section class="content">
-<ul class="blog-list">
+<div class="blog-list">
 {% set articles = 5 %}
 {% for page in pages %}
 {% if page.meta.blog and articles > 0 %}
 {% set articles = articles - 1 %}
-<li class="blog-item">
+<div class="blog-item">
     <h2 class="article-title"><a href={{ page.url }}>{{ page.meta.title }}</a></h2>
         {% if page.meta.date %}
         <h4>Published on {{ page.meta.date|date('jS M Y') }}</h4>
         {% endif %}
     <div>{{ page.content}}</div>
-</li>
+</div>
 <hr class="blog-divider" />
 {% endif %}
 {% endfor %}
-</ul>
+</div>
 </section>
 {% include 'footer.html' %}
 </body>
