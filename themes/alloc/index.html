@@ -7,7 +7,7 @@
 </header>
 <section class="content">
 <div class="blog-list">
-{% set articles = 5 %}
+{% set articles = config.article_count %}
 {% for page in pages %}
 {% if page.meta.blog and articles > 0 %}
 {% set articles = articles - 1 %}

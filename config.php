@@ -13,16 +13,12 @@ $config = [];
 $config['encryptionKey'] = 'bos[}M78eaL)|xaisUU0ukkFdhoYf04TGjEbgKkfcsMVlxWV=CRYE8d1No1DN=[X';
 
 /**
- * page title
+ * page configuration
  */
 $config['site_title'] = '...alloc] init];';
 $config['banner_image'] = 'banner';
 $config['pages_order'] = 'meta.date:desc';
-
-
-/**
- * default theme
- */
+$config['article_count'] = 4;
 $config['theme'] = 'alloc';
 $config['page_compress_level'] = 1;
 

@@ -6,12 +6,11 @@
   {% include 'banner.html' %}
 </header>
 <section class="content">
-  {% set articles = 5 %}
   {% for page in pages %}
   {% if page.meta.blog %}
-  <ul>
-    <h1><a href={{ page.url }}>{{ page.meta.title }}</a></h1>
-  </ul>
+  <div class="article-list">
+    <h2><a href={{ page.url }}>{{ page.meta.title }}</a></h2>
+  </div>
   {% endif %}
   {% endfor %}
 </section>

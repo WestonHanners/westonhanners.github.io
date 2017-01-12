@@ -105,6 +105,11 @@ article {
   padding-left: 0rem;
 }
 
+.article-list {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .blog-divider {
   border-style: dashed;
   margin-left: 0;
