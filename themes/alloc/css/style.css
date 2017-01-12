@@ -143,6 +143,7 @@ ul li ul li {
   font-size: 0.8rem;
   font-family: Hack, monospace; 
   text-transform: lowercase;
+  margin-bottom: 2rem;
 }
 
 @media screen and (max-width:1000px) {
