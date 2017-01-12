@@ -4,7 +4,7 @@ pre {
   line-height: 2rem;
 }
 
-h1, h2, h3, h4, p, dateline, a {
+h1, h2, h3, h4, p, dateline, a, .footer {
   color: #4A4A4A;
 }
 
@@ -139,7 +139,7 @@ ul li ul li {
 .footer {
   text-align: center;
   font-weight: bold;
-  font-size: 10px;
+  font-size: 0.8rem;
   font-family: Hack, monospace; 
   text-transform: lowercase;
 }
