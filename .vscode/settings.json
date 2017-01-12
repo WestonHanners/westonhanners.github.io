@@ -1,0 +1,4 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "terminal.integrated.shell.osx": "/Users/whanners/Applications/fish.app/Contents/Resources/base/bin/fish"
+}
