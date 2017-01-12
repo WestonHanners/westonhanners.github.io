@@ -16,7 +16,6 @@ ul.navbar li a {
   display: flex;
   text-align: center;
   padding: 16px 16px;
-  transition: 0.3s;
   color: #4A4A4A;
   font-weight: bold;
   font-family: Hack, monospace; 
