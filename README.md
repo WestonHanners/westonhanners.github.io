@@ -2,13 +2,15 @@
 
 Website and Content for [Alloc-Init][1]
 
+Designed by [@WestonHanners][5]
+
 ## Content
 
 Content is located in content/ in Markdown format
 
 ## Theme
 
-Alloc-Init theme is themes/alloc
+Alloc-Init theme is themes/alloc/
 
 ## Plugins
 
@@ -23,3 +25,4 @@ This site uses the following Plugins (in addition to the defaults)
 [2]: https://github.com/infostreams/snippets
 [3]: https://github.com/PhileCMS/phileRSSFeed
 [4]: https://github.com/softr/philePageCompressor
+[5]: https://twitter.com/@WestonHanners
