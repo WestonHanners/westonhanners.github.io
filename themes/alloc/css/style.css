@@ -105,7 +105,7 @@ ul li ul li {
 }
 
 .blog-item {
-  margin-top: 4rem;
+  margin-top: 3rem;
   margin-bottom: 4rem;
   list-style: none;
 }
@@ -123,6 +123,7 @@ ul li ul li {
 
 .article-title {
     margin-bottom: 0.2rem;
+    font-size: 2rem;
 }
 
 .horizontal-list {

@@ -12,7 +12,7 @@
 {% if page.meta.blog and articles > 0 %}
 {% set articles = articles - 1 %}
 <li class="blog-item">
-    <h1 class="article-title"><a href={{ page.url }}>{{ page.meta.title }}</a></h1>
+    <h2 class="article-title"><a href={{ page.url }}>{{ page.meta.title }}</a></h2>
         {% if page.meta.date %}
         <h4>Published on {{ page.meta.date|date('jS M Y') }}</h4>
         {% endif %}
