@@ -1,7 +1,11 @@
 {
     "language": "en_US",
     "ignoreWordsList": [
-        "Blog"
+        "Blog",
+        "HTTPS",
+        "PhileCMS",
+        "Piwik",
+        "Wordpress"
     ],
     "documentTypes": [
         "markdown",
