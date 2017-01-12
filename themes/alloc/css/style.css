@@ -65,8 +65,8 @@ a:hover {
 
 hr {
   color: #CCCCCC;
-  border-width: 0.5px;
-  border-style: solid;
+  border-width: 1px;
+  border-style: dotted;
   margin-left: 1rem;
   margin-right: 1rem;
 }
@@ -105,9 +105,20 @@ ul li ul li {
 }
 
 .blog-item {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
   list-style: none;
+}
+
+.blog-divider {
+  border-style: dashed;
+  margin-left: 0;
+  margin-right: 80%;
+  border-color: #DDDDDD;
+}
+
+.blog-divider:last-child {
+  display: none;
 }
 
 .article-title {
@@ -140,6 +151,11 @@ ul li ul li {
 
   h4 {
     font-size: 0.8rem;
+  }
+
+  .blog-item {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
 }
