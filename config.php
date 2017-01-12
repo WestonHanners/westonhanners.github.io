@@ -32,5 +32,6 @@ $config['plugins']['kronusdark\\pageCount'] = ['active' => true];
 $config['plugins']['softr\\pageCompressor'] = ['active' => true];
 $config['plugins']['phile\\phpFastCache'] = ['active' => true];
 $config['plugins']['phile\\simpleFileDataPersistence'] = ['active' => true];
+$config['plugins']['phile\\rssFeed'] = ['active' => true];
 
 return $config;
