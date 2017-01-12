@@ -88,6 +88,11 @@ ul li ul li {
   list-style: disc;
 }
 
+article {
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
 .content a {
   color: #266AAF;
 }
@@ -102,12 +107,6 @@ ul li ul li {
 
 .blog-list {
   padding-left: 0rem;
-}
-
-.blog-item {
-  margin-top: 3rem;
-  margin-bottom: 4rem;
-  list-style: none;
 }
 
 .blog-divider {
