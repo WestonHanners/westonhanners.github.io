@@ -165,6 +165,11 @@ article {
     margin-bottom: 2rem;
   }
 
+  .content {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
 }
 
 @media screen and (min-width:1000px) {
