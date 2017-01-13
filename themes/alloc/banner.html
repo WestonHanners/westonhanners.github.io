@@ -3,28 +3,29 @@
 	<img src="{{ content_url }}/images/{{ config.banner_image }}.png" alt="Alloc-Init" srcset="{{ content_url }}/images/{{ config.banner_image }}2x.png"/>
 	</a>
 </div>
-<ul id="topnav" class="navbar">
-
-<li><a href="./">[Home]</a></li>
+<div class="navcontainer">
+<div id="topnav" class="navitems">
+<a href="./">[Home]</a>
 
 <!-- Dynamic Items -->
 {% for page in pages %}
 {% if page.meta.page %}
 
-<li><a href={{ page.url }}>[{{ page.title }}]</a></li>
+<a href={{ page.url }}>[{{ page.title }}]</a>
 
 {% endif %}
 {% endfor %}
 <!-- End Dynamic Items -->
 
-<li><a href="./pages/all">[posts]</a></li>
+<a href="./pages/all">[posts]</a>
 
-<li><a href="https://twitter.com/WestonHanners">[Twitter]</a></li>
+<a href="https://twitter.com/WestonHanners">[Twitter]</a>
 
-<li><a href="https://github.com/kronusdark">[Github]</a></li>
+<a href="https://github.com/kronusdark">[Github]</a>
+</div>
 
-<li class="icon">
-<a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-</li>
+<div class="icon">
+	<a href="javascript:void(0);" onclick="toggleNav()">&#9776;</a>
+</div>
 
-</ul>
+</div>

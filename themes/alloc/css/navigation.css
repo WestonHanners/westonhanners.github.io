@@ -1,21 +1,21 @@
-/* Remove margins and padding from the list, and add a black background color */
-ul.navbar {
+.navcontainer {
   display: flex;
-  list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   justify-content: center;
+  align-items: baseline;
 }
 
-/* Float the list items side by side */
-ul.navbar li {float: left;}
-
-/* Style the links inside the list items */
-ul.navbar li a {
+.navitems {
   display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.navitems a {
   text-align: center;
-  padding: 16px 16px;
+  padding: 0.8rem 1rem;;
   color: #4A4A4A;
   font-weight: bold;
   font-family: Hack, monospace; 
@@ -23,47 +23,36 @@ ul.navbar li a {
   text-transform: lowercase;
 }
 
-/* Hide the list item that contains the link that should open and close the navbar on small screens */
-ul.navbar li.icon {
+.icon {
   display: none;
 }
 
 @media screen and (max-width:800px) {
 
-  ul.navbar {
-    display: block;
-    justify-content: none;
+  .icon {
+    display: inline;
+    padding: 1rem 1rem;
   }
 
-  ul.navbar li:not(:first-child) {
+  .navcontainer {
+    justify-content: space-between;
+  }
+
+  .navitems {
+    flex-flow: column nowrap;
+    justify-content: left;
+  }
+
+  .navitems a {
+    text-align: left;
+  }
+
+  .navitems a:not(:first-child) {
     display: none;
   }
 
-  ul.navbar li.icon {
-    float: right;
-    display: inline-block;
-  }
-}
-
-@media screen and (max-width:800px) {
-
-  ul.navbar.responsive {
-    position: relative;
-  }
-
-  ul.navbar.responsive li.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-
-  ul.navbar.responsive li {
-    float: none;
+  .navitems.responsive a {
     display: inline;
   }
 
-  ul.navbar.responsive li a {
-    display: flex;
-    text-align: left;
-  }
 }
