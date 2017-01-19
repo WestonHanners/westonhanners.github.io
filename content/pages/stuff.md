@@ -4,7 +4,7 @@ Page: true
 Template: page
 -->
 
-## Stuff
+# Stuff
 
 Here are some things of varying quality that I have made. Feel free to download and play with them. 
 
