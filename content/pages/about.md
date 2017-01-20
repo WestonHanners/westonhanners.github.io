@@ -1,7 +1,7 @@
 <!--
 Title: About Me
 Page: true
-Template: page
+Template: simplepage
 -->
 
 ![Mothership][1]
