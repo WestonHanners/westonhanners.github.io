@@ -5,7 +5,10 @@
         "HTTPS",
         "PhileCMS",
         "Piwik",
-        "Wordpress"
+        "Wordpress",
+        "iPhone",
+        "WWDC",
+        "Apple"
     ],
     "documentTypes": [
         "markdown",

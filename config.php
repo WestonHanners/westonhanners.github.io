@@ -29,5 +29,6 @@ $config['plugins']['softr\\pageCompressor'] = ['active' => true];
 $config['plugins']['phile\\phpFastCache'] = ['active' => true];
 $config['plugins']['phile\\simpleFileDataPersistence'] = ['active' => true];
 $config['plugins']['phile\\rssFeed'] = ['active' => true];
+$config['plugins']['gibbs\\phileLastModified'] = ['active' => true];
 
 return $config;

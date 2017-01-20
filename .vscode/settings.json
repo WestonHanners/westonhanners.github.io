@@ -3,6 +3,7 @@
     "terminal.integrated.shell.osx": "/Users/whanners/Applications/fish.app/Contents/Resources/base/bin/fish",
     "markdownlint.config": {
         "MD033": false,
-        "MD041": false
+        "MD041": false,
+        "MD002": false
     }
 }

@@ -2,9 +2,8 @@
 Title: Resources
 Page: true
 Template: page
+ShowDate: true
 -->
-
-# iOS Developer Resources
 
 This is my curated list of iOS related programming resources. I will try
 to keep this as up-to-date as I can.

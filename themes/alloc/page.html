@@ -6,7 +6,13 @@
   {% include 'banner.html' %}
 </header>
 <section class="content">
-    {{ content }}
+<article>
+  <h1 class="article-title">{{ meta.title }}</h1>
+  {% if meta.showdate %}
+  <h4 class="date-line">Last Updated on {{ modified|date('jS M Y') }}</h4>
+  {% endif %}
+  {{ content }}
+  </article>
 </section>
 {% include 'footer.html' %}
 </body>

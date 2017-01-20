@@ -9,7 +9,7 @@
   <article>
   <h1 class="article-title">{{ meta.title }}</h1>
   {% if meta.date %}
-  <h4>Published on {{ meta.date|date('jS M Y') }}</h4>
+  <h4 class="date-line">Published on {{ meta.date|date('jS M Y') }}</h4>
   {% endif %}
   {{ content }}
   </article>

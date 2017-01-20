@@ -4,31 +4,12 @@ pre {
   line-height: 2rem;
 }
 
-h1, h2, h3, h4, p, dateline, a, .footer {
+h1, h2, h3, h4, p, date-line, a, .footer {
   color: #4A4A4A;
 }
 
-h1 {
-  line-height: 2rem;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
 h2 {
-  line-height: 2rem;
-  font-weight: bolder;
   font-size: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-h4 {
-  font-size: 1rem;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
 }
 
 body {
@@ -106,29 +87,34 @@ article {
   margin-right: 2%;
 }
 
-.blog-list {
-  padding-left: 0rem;
-}
-
 .article-list {
+  padding-left: 0rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-.blog-divider {
+.article-divider {
   border-style: dashed;
   margin-left: 0;
   margin-right: 80%;
   border-color: #DDDDDD;
 }
 
-.blog-divider:last-child {
+.article-divider:last-child {
   display: none;
 }
 
 .article-title {
     margin-bottom: 0.2rem;
     font-size: 2rem;
+}
+
+.date-line {
+  line-height: 1rem;
+  font-size: 0.8rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 .horizontal-list {

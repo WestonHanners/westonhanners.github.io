@@ -2,9 +2,8 @@
 Title: Stuff
 Page: true
 Template: page
+ShowDate: true
 -->
-
-# Stuff
 
 Here are some things of varying quality that I have made. Feel free to download and play with them. 
 
