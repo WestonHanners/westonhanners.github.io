@@ -113,10 +113,6 @@ class DefaultSnippets extends Snippets {
 			$embed_url = "//www.youtube.com/embed/$video_id";
 		}
 
-		if ($class == null) {
-			$class = 'inline-image';
-		}
-
 		return "<div class=\"$class\"><iframe width=\"$width\" height=\"$height\" src=\"$embed_url\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>";
 	}
 
