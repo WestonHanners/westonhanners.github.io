@@ -7,7 +7,7 @@
 </header>
 <section class="content">
   {% for page in pages %}
-  {% if page.meta.blog %}
+  {% if page.meta.blog == "true" %}
   <div class="article-list">
     <h2><a href={{ page.url }}>{{ page.meta.title }}</a></h2>
   </div>

@@ -9,7 +9,7 @@
 <div class="article-list">
 {% set articles = config.article_count %}
 {% for page in pages %}
-{% if page.meta.blog and articles > 0 %}
+{% if (page.meta.blog == "true" and articles > 0) %}
 {% set articles = articles - 1 %}
 <article>
     <h2 class="article-title"><a href={{ page.url }}>{{ page.meta.title }}</a></h2>
