@@ -6,6 +6,7 @@ Template: simplepage
 
 ![Mothership][1]
 
+<center>
 My name is Weston Hanners and I am a Mobile Software Craftsman 
 for [Y Media Labs][2] in Downtown Indianapolis.
 
@@ -18,6 +19,7 @@ The plan is to use this blog to share the things I learn with the world,
 My hope is that you will find it as interesting as I do.
 
 Here are some places you can find me around the web:
+</center>
 
 <div markdown="1" class="horizontal-list">
 
