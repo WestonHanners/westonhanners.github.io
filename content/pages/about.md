@@ -6,10 +6,13 @@ Template: simplepage
 
 ![Mothership][1]
 
-My name is Weston Hanners and I am a Senior iOS Engineer and aspiring
-Mobile UX Designer for [Y Media Labs][2] in Downtown Indianapolis. 
+My name is Weston Hanners and I am a Mobile Software Craftsman 
+for [Y Media Labs][2] in Downtown Indianapolis.
 
-I am a male 30-something who is interested Japan, Gaming, and Technology. 
+I am not here to be a code monkey, I am not here to collect a paycheck.
+
+I am here to build great things and make a difference, and I will not be 
+detured. 
 
 The plan is to use this blog to share the things I learn with the world, 
 My hope is that you will find it as interesting as I do.

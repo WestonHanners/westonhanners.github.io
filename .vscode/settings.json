@@ -5,5 +5,7 @@
         "MD033": false,
         "MD041": false,
         "MD002": false
-    }
+    },
+    "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
+    "editor.rulers": [80]
 }
