@@ -9,6 +9,9 @@
   {% if meta.robots %}
   <meta name="robots" content="{{ meta.robots }}" />
   {% endif %}
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@westonhanners"/>
+  <meta name="twitter:creator" content="@westonhanners"/>
   <meta property="og:type" content="article"/>
   <meta property="og:title" content="{% if meta.title %} {{ meta.title }} | {% endif %} {{ site_title }}"/>
   <meta property="og:description" content="{{ meta.description }}"/>
