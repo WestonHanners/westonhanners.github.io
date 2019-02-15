@@ -8,21 +8,21 @@ namespace Phile\Model;
  * Abstract model which implements the ArrayAccess interface
  *
  * @author  Frank Nägler
- * @link    https://philecms.com
+ * @link    https://philecms.github.io
  * @license http://opensource.org/licenses/MIT
  * @package Phile\Model
  */
 class AbstractModel implements \ArrayAccess
 {
     /**
- * @var array the storage
-*/
+     * @var array the storage
+     */
     protected $data = array();
 
     /**
      * get value for given key
      *
-     * @param $key
+     * @param string $key
      *
      * @return null|mixed
      */
@@ -55,7 +55,7 @@ class AbstractModel implements \ArrayAccess
     /**
      * magic method to get value
      *
-     * @param $name
+     * @param string $name
      *
      * @return null|mixed
      */
@@ -95,7 +95,6 @@ class AbstractModel implements \ArrayAccess
 
             return $this->set($name, $args[0]);
         }
-
     }
 
     /**

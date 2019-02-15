@@ -7,7 +7,7 @@ namespace Phile\ServiceLocator;
 /**
  * Interface ParserInterface
  *
- * @link    https://philecms.com
+ * @link    https://philecms.github.io
  * @license http://opensource.org/licenses/MIT
  * @package Phile\ServiceLocator
  */
@@ -16,7 +16,7 @@ interface ParserInterface
     /**
      * parse data
      *
-     * @param $data
+     * @param string $data
      *
      * @return mixed
      */

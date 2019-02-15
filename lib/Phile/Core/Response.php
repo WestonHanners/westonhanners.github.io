@@ -6,6 +6,8 @@
 
 namespace Phile\Core;
 
+use Phile\Http\ResponseFactory;
+
 /**
  * the Response class is responsible for sending a HTTP response to the client
  *
@@ -16,13 +18,12 @@ namespace Phile\Core;
  * After send() Phile is terminated.
  *
  * @author  PhileCMS
- * @link    https://philecms.com
+ * @link    https://philecms.github.io
  * @license http://opensource.org/licenses/MIT
  * @package Phile
  */
-class Response
+class Response extends ResponseFactory
 {
-
     /**
      * @var string HTTP body
      */
@@ -61,10 +62,10 @@ class Response
     /**
      * set the response body
      *
-     * @param  $body
+     * @param string $body
      * @return $this
      */
-    public function setBody($body)
+    public function setBody(string $body): self
     {
         $this->body = $body;
         return $this;
@@ -73,10 +74,10 @@ class Response
     /**
      * set the response character-set
      *
-     * @param  $charset
+     * @param string $charset
      * @return $this
      */
-    public function setCharset($charset)
+    public function setCharset(string $charset): self
     {
         $this->charset = $charset;
         return $this;
@@ -102,7 +103,7 @@ class Response
     /**
      * set the response HTTP status code
      *
-     * @param  $code
+     * @param int $code
      * @return $this
      */
     public function setStatusCode($code)
@@ -130,7 +131,7 @@ class Response
     /**
      * helper for easy testing
      */
-    public function stop()
+    public function stop(): void
     {
         die();
     }
@@ -138,7 +139,7 @@ class Response
     /**
      * output all set response headers
      */
-    protected function outputHeader()
+    protected function outputHeader(): void
     {
         foreach ($this->headers as $header) {
             header($header);

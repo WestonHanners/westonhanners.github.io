@@ -8,5 +8,4 @@ $baseDir = dirname(dirname($vendorDir));
 return array(
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
     'Phile\\Composer' => array($vendorDir . '/phile-cms/plugin-installer-plugin/src'),
-    'Michelf' => array($vendorDir . '/michelf/php-markdown'),
 );

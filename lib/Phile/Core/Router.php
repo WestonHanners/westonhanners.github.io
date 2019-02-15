@@ -1,17 +1,14 @@
 <?php
-/**
- * the Router class
+/*
+ * @author  PhileCMS
+ * @link    https://philecms.github.io
+ * @license http://opensource.org/licenses/MIT
  */
 
 namespace Phile\Core;
 
 /**
  * this Router class is responsible for Phile's basic URL management
- *
- * @author  PhileCMS
- * @link    https://philecms.com
- * @license http://opensource.org/licenses/MIT
- * @package Phile\Core
  */
 class Router
 {
@@ -42,10 +39,7 @@ class Router
         $url = $this->server['REQUEST_URI'];
 
         // remove query string
-        $queryPosition = strpos($url, '?');
-        if ($queryPosition) {
-            $url = substr($url, 0, $queryPosition);
-        }
+        list($url) = explode('?', $url);
 
         // resolve root-relative URL-path
         $baseUrl = $this->getBaseUrl();
@@ -67,22 +61,20 @@ class Router
      */
     public function getBaseUrl()
     {
-        if (Registry::isRegistered('Phile_Settings')) {
-            $config = Registry::get('Phile_Settings');
-            if (!empty($config['base_url'])) {
-                return $config['base_url'];
-            }
+        $baseUrl = Container::getInstance()->get('Phile_Config')->get('base_url');
+        if (!empty($baseUrl)) {
+            return $baseUrl;
         }
 
         $url = '';
 
         if (isset($this->server['PHP_SELF'])) {
-            $url = preg_replace('/index\.php(.*)?$/', '', $this->server['PHP_SELF']);
+            $url = preg_replace('/index\.php(.*)?$/', '', (string)$this->server['PHP_SELF']);
         }
 
-        if (isset($this->server['HTTP_HOST'])) {
+        $protocol = $this->getProtocol();
+        if (!empty($protocol)) {
             $host = $this->server['HTTP_HOST'];
-            $protocol = $this->getProtocol();
             $url = $protocol . '://' . $host . $url;
         }
 
@@ -124,9 +116,9 @@ class Router
     /**
      * get the HTTP-protocol
      *
-     * @return string
+     * @return string|null
      */
-    public function getProtocol()
+    public function getProtocol(): ?string
     {
         if (empty($this->server['HTTP_HOST'])) {
             return null;

@@ -11,15 +11,15 @@ use Symfony\Component\Yaml\Yaml;
  * Class Meta
  *
  * @author  PhileCMS
- * @link    https://philecms.com
+ * @link    https://philecms.github.io
  * @license http://opensource.org/licenses/MIT
  * @package Phile\Plugin\Phile\ParserMeta\Parser
  */
 class Meta implements MetaInterface
 {
     /**
- * @var array $config the configuration for this parser
-*/
+     * @var array $config the configuration for this parser
+     */
     private $config;
 
     /**
@@ -59,7 +59,7 @@ class Meta implements MetaInterface
             return [];
         }
 
-        $meta = trim(substr($rawData, strlen($start), strpos($rawData, $stop) - (strlen($stop) + 1)));
+        $meta = trim(substr($rawData, strlen($start), strpos($rawData, $stop, strlen($start)) - (strlen($stop) + 1)));
         if (strtolower($this->config['format']) === 'yaml') {
             $meta = Yaml::parse($meta);
         } else {

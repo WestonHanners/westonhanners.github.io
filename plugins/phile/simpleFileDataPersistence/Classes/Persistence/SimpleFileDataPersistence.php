@@ -10,31 +10,33 @@ use Phile\ServiceLocator\PersistenceInterface;
  * Class SimpleFileDataPersistence
  *
  * @author  Frank Nägler
- * @link    https://philecms.com
+ * @link    https://philecms.github.io
  * @license http://opensource.org/licenses/MIT
  * @package Phile\Plugin\Phile\SimpleFileDataPersistence\Persistence
  */
 class SimpleFileDataPersistence implements PersistenceInterface
 {
     /**
- * @var string $dataDirectory the data storage directory
-*/
+     * @var string $dataDirectory the data storage directory
+     */
     protected $dataDirectory;
 
     /**
      * the constructor
+     *
+     * @param string $dataDir Directory to store data
      */
-    public function __construct()
+    public function __construct(string $dataDir)
     {
-        $this->dataDirectory = STORAGE_DIR;
+        $this->dataDirectory = $dataDir;
     }
 
     /**
      * check if key exists
      *
-     * @param $key
+     * @param string $key
      *
-     * @return bool|mixed
+     * @return bool
      */
     public function has($key)
     {
@@ -44,7 +46,7 @@ class SimpleFileDataPersistence implements PersistenceInterface
     /**
      * get value for given key
      *
-     * @param $key
+     * @param string $key
      *
      * @return mixed
      * @throws \Phile\Exception\AbstractException
@@ -61,10 +63,10 @@ class SimpleFileDataPersistence implements PersistenceInterface
     /**
      * set value for given key
      *
-     * @param $key
-     * @param $value
+     * @param string $key
+     * @param mixed $value
      *
-     * @return mixed|void
+     * @return void
      */
     public function set($key, $value)
     {
@@ -77,7 +79,7 @@ class SimpleFileDataPersistence implements PersistenceInterface
      * @param string $key
      * @param array  $options
      *
-     * @return mixed|void
+     * @return void
      * @throws \Phile\Exception\AbstractException
      */
     public function delete($key, array $options = array())
@@ -91,7 +93,7 @@ class SimpleFileDataPersistence implements PersistenceInterface
     /**
      * generate internal key
      *
-     * @param $key
+     * @param string $key
      *
      * @return string
      */
@@ -103,7 +105,7 @@ class SimpleFileDataPersistence implements PersistenceInterface
     /**
      * get storage filename
      *
-     * @param $key
+     * @param string $key
      *
      * @return string
      */

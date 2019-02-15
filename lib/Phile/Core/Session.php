@@ -8,20 +8,20 @@ namespace Phile\Core;
  * the Session class for implementing a session
  *
  * @author  Frank Nägler
- * @link    https://philecms.com
+ * @link    https://philecms.github.io
  * @license http://opensource.org/licenses/MIT
  * @package Phile\Core
  */
 class Session
 {
     /**
- * @var bool mark if session is started
-*/
+     * @var bool mark if session is started
+     */
     static public $isStarted = false;
 
     /**
- * @var string the session id
-*/
+     * @var string the session id
+     */
     static public $sessionId = '';
 
     /**
@@ -118,7 +118,7 @@ class Session
     /**
      * check id key is empty/set or not
      *
-     * @param $key
+     * @param string $key
      *
      * @return bool
      */

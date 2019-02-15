@@ -10,26 +10,82 @@ use Phile\Gateway\EventObserverInterface;
  * the Event class for implementing a hook/event system
  *
  * @author  PhileCMS
- * @link    https://philecms.com
+ * @link    https://philecms.github.io
  * @license http://opensource.org/licenses/MIT
  * @package Phile\Core
  */
 class Event
 {
+
+    /**
+     * @var Event global instance
+     * @deprecated static use is deprecated
+     */
+    protected static $instance;
+
     /**
      * Registry object provides storage for objects.
      *
      * @var array
      */
-    protected static $registry = [];
+    protected $registry = [];
+
+    /**
+     * get global event instance
+     *
+     * @return Event
+     * @deprecated static use is deprectated
+     */
+    public static function getInstance()
+    {
+        return static::$instance;
+    }
+
+    /**
+     * Set global event instance
+     *
+     * @param Event $instance
+     * @return void
+     * @deprecated static use is deprecated
+     */
+    public static function setInstance(Event $instance): void
+    {
+        static::$instance = $instance;
+    }
+
+    /**
+     * Global register
+     *
+     * @param string $eventName
+     * @param EventObserverInterface|callable $object observer
+     * @return void
+     * @deprecated static use is deprecated
+     */
+    public static function registerEvent($eventName, $object): void
+    {
+        static::$instance->register($eventName, $object);
+    }
+
+    /**
+     * Global trigger
+     *
+     * @param string $eventName
+     * @param array $data
+     * @return void
+     * @deprecated static use is deprecated
+     */
+    public static function triggerEvent($eventName, $data = null): void
+    {
+        static::$instance->trigger($eventName, $data);
+    }
 
     /**
      * method to register an event
      *
-     * @param string                          $eventName the event to observe
-     * @param EventObserverInterface|callable $object    observer
+     * @param string $eventName the event to observe
+     * @param EventObserverInterface|callable $object observer
      */
-    public static function registerEvent($eventName, $object)
+    public function register(string $eventName, $object): void
     {
         if ($object instanceof EventObserverInterface) {
             $object = [$object, 'on'];
@@ -40,21 +96,21 @@ class Event
                 1427814905
             );
         }
-        self::$registry[$eventName][] = $object;
+        $this->registry[$eventName][] = $object;
     }
 
     /**
      * method to trigger an event
      *
      * @param string $eventName the event name (register for this name)
-     * @param array  $data      array with some additional data
+     * @param array $data array with some additional data
      */
-    public static function triggerEvent($eventName, $data = null)
+    public function trigger(string $eventName, array $data = null): void
     {
-        if (empty(self::$registry[$eventName])) {
+        if (empty($this->registry[$eventName])) {
             return;
         }
-        foreach (self::$registry[$eventName] as $observer) {
+        foreach ($this->registry[$eventName] as $observer) {
             call_user_func_array($observer, [$eventName, $data]);
         }
     }

@@ -11,33 +11,31 @@ use Phile\ServiceLocator\ParserInterface;
  * Class Markdown
  *
  * @author  Frank Nägler
- * @link    https://philecms.com
+ * @link    https://philecms.github.io
  * @license http://opensource.org/licenses/MIT
  * @package Phile\Plugin\Phile\ParserMarkdown\Parser
  */
 class Markdown implements ParserInterface
 {
     /**
- * @var mixed the configuration
-*/
+     * @var mixed the configuration
+     */
     private $config;
 
     /**
      * the constructor
      *
-     * @param null $config
+     * @param array $config
      */
-    public function __construct($config = null)
+    public function __construct(array $config = [])
     {
-        if (!is_null($config)) {
-            $this->config = $config;
-        }
+        $this->config = $config;
     }
 
     /**
      * overload parse with the MarkdownExtra parser
      *
-     * @param $data
+     * @param string $data
      *
      * @return string
      */
