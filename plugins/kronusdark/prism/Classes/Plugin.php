@@ -18,11 +18,12 @@ class Plugin extends \Phile\Plugin\AbstractPlugin implements \Phile\Gateway\Even
     }
 
     public function getPrismHtml($string) {
+        print($string);
         $code = strip_tags($string[2]);
         return "<pre><code class='language-$string[1]'>{$code}</code></pre>";
     }
 
-    public function on($eventKey, $data = null) {
+    public function on($eventKey, $data = null): void {
         if ($eventKey === 'after_parse_content') {
             // store the starting content
             $content = $data['content'];

@@ -36,7 +36,7 @@ class Plugin extends \Phile\Plugin\AbstractPlugin implements \Phile\Gateway\Even
 		$storage->set($_SERVER['REQUEST_URI'], $pageViews);
 	}
     	
-	public function on($eventKey, $data = null) 
+	public function on($eventKey, $data = null): void
 	{
 		if ($eventKey == 'template_engine_registered') 
 		{
