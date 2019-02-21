@@ -32,7 +32,7 @@ class Plugin extends \Phile\Plugin\AbstractPlugin implements
      * @param  array   $data      Array of event data
      * @return void    
      */
-    public function on($eventKey, $data = null)
+    public function on($eventKey, $data = null): void
     {
         if($eventKey == 'before_load_content')
         {

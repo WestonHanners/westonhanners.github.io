@@ -12,7 +12,7 @@ class Plugin extends \Phile\Plugin\AbstractPlugin implements \Phile\Gateway\Even
 		}
 	}
 
-	public function on($eventKey, $data = null) {
+	public function on($eventKey, $data = null): void {
 		if ($eventKey == "before_parse_content") {
 			$data['page']->setContent($this->parse($data['content']));
 		}
