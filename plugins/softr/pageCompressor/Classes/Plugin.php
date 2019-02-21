@@ -45,7 +45,7 @@ class Plugin extends \Phile\Plugin\AbstractPlugin implements \Phile\Gateway\Even
      *
      * @return mixed
      */
-    public function on($eventKey, $data = null)
+    public function on($eventKey, $data = null): void
     {
         // Load configs
         if($eventKey == 'config_loaded')
