@@ -11,17 +11,19 @@ $config = [];
 /**
  * encryption key
  */
-$config['encryptionKey'] = '';
+$config['encryptionKey'] = 'bos[}M78eaL)|xaisUU0ukkFdhoYf04TGjEbgKkfcsMVlxWV=CRYE8d1No1DN=[X';
 
 /**
  * page title
  */
-$config['site_title'] = 'PhileCMS';
-
+$config['site_title'] = '...alloc] init];';
+$config['banner_image'] = 'banner';
+$config['pages_order'] = 'meta.date:desc';
+$config['article_count'] = 4;
 /**
  * default theme
  */
-$config['theme'] = 'default';
+$config['theme'] = 'alloc';
 
 /**
  * Activate the persistent cache for better performance.
@@ -32,5 +34,8 @@ $config['theme'] = 'default';
  * Use the demo-plugin as a starting point to write your own plugins.
  */
 //$config['plugins']['mycompany\\demoPlugin'] = ['active' => true];
+$config['plugins']['kronusdark\\pageCount'] = ['active' => true];
+$config['plugins']['softr\\pageCompressor'] = ['active' => true];
+$config['plugins']['infostreams\\snippets'] = ['active' => true];
 
 return $config;

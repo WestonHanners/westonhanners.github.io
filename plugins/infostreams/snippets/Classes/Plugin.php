@@ -39,7 +39,7 @@ class Plugin extends \Phile\Plugin\AbstractPlugin implements \Phile\Gateway\Even
 	 *
 	 * @param array $settings
 	 */
-	public function injectSettings(array $settings = null) {
+	public function injectSettings(array $settings = null): void {
 		$this->settings = ($settings === null) ? array() : $settings;
 
 		// register default snippets
@@ -54,16 +54,6 @@ class Plugin extends \Phile\Plugin\AbstractPlugin implements \Phile\Gateway\Even
 				}
 			}
 		}
-	}
-
-	/**
-	 * Initialize plugin (PhileCMS >= 1.5)
-	 *
-	 * @param string $pluginKey
-	 */
-	public function initializePlugin($pluginKey) {
-		parent::initializePlugin($pluginKey);
-		$this->injectSettings($this->settings);
 	}
 
 	/**
