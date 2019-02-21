@@ -23,7 +23,7 @@ Here are some places you can find me around the web:
 
 <div markdown="1" class="horizontal-list">
 
-[github](https://www.github.com/kronusdark)
+[github](https://www.github.com/westonhanners)
 [twitter](https://www.twitter.com/WestonHanners)
 [youtube](https://www.youtube.com/kronusdark)
 [linkedin](https://www.linkedin.com/in/lhanners)

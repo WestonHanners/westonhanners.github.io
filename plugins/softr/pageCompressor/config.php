@@ -11,5 +11,5 @@ return array
      * @var 3 - Heavy. Save pre and code tags
      * @var 4 - Light. Minify and keep comments
      */
-    'compress_level' => 2,
+    'compress_level' => "0",
 );

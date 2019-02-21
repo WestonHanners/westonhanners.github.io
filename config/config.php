@@ -36,5 +36,6 @@ $config['theme'] = 'alloc';
 //$config['plugins']['mycompany\\demoPlugin'] = ['active' => true];
 $config['plugins']['kronusdark\\pageCount'] = ['active' => true];
 $config['plugins']['infostreams\\snippets'] = ['active' => true];
+$config['plugins']['phile\\rssFeed'] = ['active' => true];
 
 return $config;
