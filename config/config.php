@@ -35,7 +35,6 @@ $config['theme'] = 'alloc';
  */
 //$config['plugins']['mycompany\\demoPlugin'] = ['active' => true];
 $config['plugins']['kronusdark\\pageCount'] = ['active' => true];
-$config['plugins']['softr\\pageCompressor'] = ['active' => true];
 $config['plugins']['infostreams\\snippets'] = ['active' => true];
 
 return $config;
