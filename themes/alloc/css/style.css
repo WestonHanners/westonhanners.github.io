@@ -16,6 +16,10 @@
     --nav-link-color: gainsboro;
     --main-code-color: lightgray;
   }
+
+  img {
+    background-color: white;
+  }
 }
 
 pre {
