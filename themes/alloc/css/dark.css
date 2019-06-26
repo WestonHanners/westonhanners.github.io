@@ -1,0 +1,13 @@
+:root {
+    --main-text-color: white;
+    --main-background-color: black;
+    --main-link-color: lightgoldenrodyellow;
+    --hover-link-color: yellow;
+    --nav-link-color: floralwhite;
+    --main-code-color: floralwhite;
+    --highlight-color: lightsteelblue;
+  }
+
+  img {
+    background-color: white;
+  }

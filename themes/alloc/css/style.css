@@ -1,3 +1,5 @@
+/* Light Color Theme Default */
+
 :root {
   --main-text-color: black;
   --main-background-color: white;
@@ -6,22 +8,6 @@
   --nav-link-color: darkslategray;
   --main-code-color: darkslategray;
   --highlight-color: yellow;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --main-text-color: white;
-    --main-background-color: black;
-    --main-link-color: lightgoldenrodyellow;
-    --hover-link-color: yellow;
-    --nav-link-color: floralwhite;
-    --main-code-color: floralwhite;
-    --highlight-color: lightsteelblue;
-  }
-
-  img {
-    background-color: white;
-  }
 }
 
 ::selection {
@@ -61,10 +47,6 @@ body {
   padding: 0;
   margin-left: 0;
   margin-right: 0;
-}
-
-a {
-  text-decoration: none;
 }
 
 p {
@@ -146,14 +128,20 @@ article {
 .banner {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  font-size: 9vw;
-  text-transform: lowercase;
-  font-weight: bold;
   text-align: center;
+}
+
+/* Links */
+
+a {
+  text-decoration: none;
 }
 
 .banner a {
   font-family: Hack, monospace; 
+  font-size: 9vw;
+  text-transform: lowercase;
+  font-weight: bold;
 }
 
 .banner a:hover {
@@ -164,12 +152,14 @@ article {
   color: var(--main-link-color);
 }
 
+/* Content */
+
 .content {
   line-height: 2rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
-  margin-left: 2%;
-  margin-right: 2%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .article-list {
@@ -252,66 +242,3 @@ article {
 .icon {
   display: none;
 }
-
-@media screen and (max-width:800px) {
-
-  .icon {
-    display: inline;
-    padding: 1rem 1rem;
-  }
-
-  .navcontainer {
-    justify-content: space-between;
-  }
-
-  .navitems {
-    flex-flow: column nowrap;
-    justify-content: left;
-  }
-
-  .navitems a {
-    text-align: left;
-  }
-
-  .navitems a:not(:first-child) {
-    display: none;
-  }
-
-  .navitems.responsive a {
-    display: inline;
-  }
-
-  .footer {
-    font-size: 0.6rem;
-  }
-
-}
-
-@media screen and (max-width:1000px) {
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  h4 {
-    font-size: 0.8rem;
-  }
-
-  .blog-item {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .content {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-
-}
-
-@media screen and (min-width:1000px) {
-  .content {
-    margin-left: 20%;
-    margin-right: 20%
-  }
-}
-
