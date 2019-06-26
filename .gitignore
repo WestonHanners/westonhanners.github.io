@@ -4,3 +4,5 @@ lib/cache/*
 .well-known
 piwik
 error_log
+css.css
+css.css.map
