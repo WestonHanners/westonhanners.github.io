@@ -1,5 +1,6 @@
 <!--
 Title: About Me
+Description: About Me
 Page: true
 Template: simplepage
 -->
