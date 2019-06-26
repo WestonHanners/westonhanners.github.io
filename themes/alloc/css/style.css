@@ -267,6 +267,10 @@ article {
     display: inline;
   }
 
+  .footer {
+    font-size: 0.6rem;
+  }
+
 }
 
 @media screen and (max-width:1000px) {
