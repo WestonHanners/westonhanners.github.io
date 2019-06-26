@@ -10,13 +10,11 @@ Template: simplepage
 My name is Weston Hanners and I am a Mobile Software Craftsman 
 for [Y Media Labs][2] in Downtown Indianapolis.
 
-I am not here to be a code monkey, I am not here to collect a paycheck.
+I have been working with Objective-C since 2010 and Swift since 2014
+and have had the pleasure of working with many great developers and clients.
 
-I am here to build great things and make a difference, and I will not be 
-deterred. 
-
-The plan is to use this blog to share the things I learn with the world, 
-My hope is that you will find it as interesting as I do.
+I hope the thoughts and learnings I share through this blog will help others 
+like me along their journeys.
 
 Here are some places you can find me around the web...
 </center-text>
