@@ -113,7 +113,7 @@ class DefaultSnippets extends Snippets {
 			$embed_url = "//www.youtube.com/embed/$video_id";
 		}
 
-		return "<div class=\"$class\"><iframe width=\"$width\" height=\"$height\" src=\"$embed_url\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>";
+		return "<div class=\"$class\"><iframe width=\"$width\" height=\"$height\" src=\"\" data-src=\"$embed_url\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>";
 	}
 
 	/**
