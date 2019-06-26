@@ -1,0 +1,1 @@
+.icon{display:inline;padding:1rem 1rem}.footer{font-size:.6rem}.navcontainer{justify-content:space-between}.navitems{flex-flow:column nowrap;justify-content:left}.navitems a{text-align:left}.navitems a:not(:first-child){display:none}.navitems.responsive a{display:inline}
