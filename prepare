@@ -8,4 +8,4 @@ find . -type d -exec chmod 755 {} \;
 echo "*** Fixing PhileCMS"
 chmod -R 777 content lib/cache lib/datastorage
 echo "*** Fixing Fix Permissions..."
-chmod +x fixpermissions
+chmod +x prepare
