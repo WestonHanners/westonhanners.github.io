@@ -5,6 +5,7 @@
   --hover-link-color: mediumblue;
   --nav-link-color: darkslategray;
   --main-code-color: darkslategray;
+  --highlight-color: yellow;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,13 +14,18 @@
     --main-background-color: black;
     --main-link-color: lightgoldenrodyellow;
     --hover-link-color: yellow;
-    --nav-link-color: gainsboro;
+    --nav-link-color: floralwhite;
     --main-code-color: floralwhite;
+    --highlight-color: lightsteelblue;
   }
 
   img {
     background-color: white;
   }
+}
+
+::selection {
+  background: var(--highlight-color);
 }
 
 pre {
@@ -37,7 +43,7 @@ code {
   line-height: 1.5rem;
 }
 
-h1, h2, h3, h4, p, date-line, a, .footer {
+h1, h2, h3, h4, p, date-line, a, li, .footer {
   color: var(--main-text-color);
   font-family: "San Franciso", sans-serif;
 }
