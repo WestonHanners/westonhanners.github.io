@@ -39,6 +39,7 @@ code {
 
 h1, h2, h3, h4, p, date-line, a, .footer {
   color: var(--main-text-color);
+  font-family: "San Franciso", sans-serif;
 }
 
 h2 {
@@ -61,7 +62,6 @@ a {
 }
 
 p {
-  font-family: "San Franciso", sans-serif;
   line-height: 2rem;
 }
 
@@ -138,10 +138,13 @@ article {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   font-size: 9vw;
-  font-family: Hack, monospace; 
   text-transform: lowercase;
   font-weight: bold;
   text-align: center;
+}
+
+.banner a {
+  font-family: Hack, monospace; 
 }
 
 .banner a:hover {
