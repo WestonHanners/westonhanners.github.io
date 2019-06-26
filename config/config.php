@@ -21,6 +21,7 @@ $config['banner_image'] = 'banner';
 $config['pages_order'] = 'meta.date:desc';
 $config['article_count'] = 4;
 $config['page_compress_level'] = 1;
+
 /**
  * default theme
  */
@@ -37,6 +38,6 @@ $config['plugins']['phile\\phpFastCache'] = ['active' => true, 'storage' => 'fil
 $config['plugins']['softr\\pageCompressor'] = ['active' => true];
 $config['plugins']['kronusdark\\pageCount'] = ['active' => true];
 $config['plugins']['infostreams\\snippets'] = ['active' => true];
-$config['plugins']['phile\\rssFeed'] = ['active' => true];
+// $config['plugins']['phile\\rssFeed'] = ['active' => true];
 
 return $config;
