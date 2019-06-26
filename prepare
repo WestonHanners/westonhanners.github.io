@@ -7,5 +7,5 @@ echo "*** Fixing Directories..."
 find . -type d -exec chmod 755 {} \;
 echo "*** Fixing PhileCMS"
 chmod -R 777 content lib/cache lib/datastorage
-echo "*** Fixing Fix Permissions..."
+echo "*** Fixing Prepare Script..."
 chmod +x prepare
