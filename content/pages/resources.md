@@ -30,9 +30,7 @@ to keep this as up-to-date as I can.
 ## Blogs & Podcasts
 
 - [NSBlog - Mike Ash](http://www.mikeash.com/pyblog/ "Mike Ash's Blog")
-- [Rapture in Venice](http://raptureinvenice.com "Rapture in Venice")
 - [NSHipster](http://nshipster.com "NSHipster")
-- [Alexander Edge's Blog](http://www.alexedge.co.uk "Alexander Edge's Blog")
 - [NSScreenCast](http://nsscreencast.com "NSScreenCast")
 - [iOS Dev Weekly](http://iosdevweekly.com "iOS Dev Weekly")
 - [CocoaManifest](http://cocoamanifest.net "CocoaManifest")
