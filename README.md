@@ -1,4 +1,5 @@
-# Blog for Weston Hanners
+# Blog for Weston Hanners 
+<https://alloc-init.com>
 
 ## Content
 Content is stored in `content/` and is in the [Markdown](2) format.
@@ -20,13 +21,19 @@ Content Managment System by [PhileCMS](1)
 
 ## Development
 
-Three scripts are included
+### Build Requirements
+
+- **SASS**
+- **PHP 7.1**
+- **Apache**
+
+### Build Scripts
 
 - `./prepare` is for cleaning and preparing the website content when deployed to a webserver.
 - `./compile` is for compiling the SASS into CSS.
 - `./devmode` will compile the SASS in real time for development locally  
 
-> .htaccess for testing locally in Apache (Do Not Commit)  
+### .htaccess for testing locally in Apache (Do Not Commit)  
 
 ```
 #####################################
