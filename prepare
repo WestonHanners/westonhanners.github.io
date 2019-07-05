@@ -1,11 +1,13 @@
 #!/bin/bash
-echo "*** Compiling CSS..."
-./compile
 echo "*** Fixing Files..."
 find . -type f -exec chmod 644 {} \; 
 echo "*** Fixing Directories..."
 find . -type d -exec chmod 755 {} \;
 echo "*** Fixing PhileCMS"
 chmod -R 777 content lib/cache lib/datastorage
-echo "*** Fixing Prepare Script..."
+echo "*** Fixing script permissions..."
 chmod +x prepare
+chmod +x compile
+chmod +x devmode
+echo "*** Compiling CSS..."
+./compile
