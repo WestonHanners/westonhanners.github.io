@@ -8,8 +8,8 @@ Please refrain from putting HTML into these Markdown files, they should be pure 
 
 **Images** should be stored in `content/images`  
 **Blog posts** should be stored in `content/blog`  
-**Downloadable** files should be stored in `content/downloads`  
-**Stand-alone** pages should be stored in `content/pages`  
+**Downloadable files** should be stored in `content/downloads`  
+**Stand-alone pages** should be stored in `content/pages`  
 
 ## Theme
 
@@ -17,7 +17,7 @@ Alloc-Init theme, all logos and icons were designed by [@WestonHanners](3) ©201
 
 [Hack Font](4) used under the [MIT License](5)
 
-Content Managment System by [PhileCMS](1)
+Content Management System by [PhileCMS](1)
 
 ## Development
 
@@ -29,7 +29,7 @@ Content Managment System by [PhileCMS](1)
 
 ### Build Scripts
 
-- `./prepare` is for cleaning and preparing the website content when deployed to a webserver.
+- `./prepare` is for cleaning and preparing the website content when deployed to a web-server.
 - `./compile` is for compiling the SASS into CSS.
 - `./devmode` will compile the SASS in real time for development locally  
 
