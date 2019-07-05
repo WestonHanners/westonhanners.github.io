@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "*** Compiling CSS..."
-sass -c themes/alloc/sass/styles.sass themes/alloc/css/css.css --style compressed
+./compile
 echo "*** Fixing Files..."
 find . -type f -exec chmod 644 {} \; 
 echo "*** Fixing Directories..."
