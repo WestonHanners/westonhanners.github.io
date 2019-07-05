@@ -1,7 +1,5 @@
 # Blog for Weston Hanners
 
-> Powered by [Phile CMS](1)
-
 ## Content
 Content is stored in `content/` and is in the [Markdown](2) format.
 
@@ -17,6 +15,8 @@ Please refrain from putting HTML into these Markdown files, they should be pure 
 Alloc-Init theme, all logos and icons were designed by [@WestonHanners](3) ©2019
 
 [Hack Font](4) used under the [MIT License](5)
+
+Content Managment System by [PhileCMS](1)
 
 ## Development
 
