@@ -17,8 +17,6 @@ clients.
 I hope the thoughts and learnings I share through this blog will help others 
 like me along their journey.
 
-Here are some places you can find me around the web...
-
 - [github](https://www.github.com/westonhanners)
 - [twitter](https://www.twitter.com/WestonHanners)
 - [youtube](https://www.youtube.com/kronusdark)
