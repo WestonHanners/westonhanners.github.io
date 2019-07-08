@@ -36,7 +36,7 @@ $config['plugins']['phile\\phpFastCache'] = ['active' => true, 'storage' => 'fil
  * Use the demo-plugin as a starting point to write your own plugins.
  */
 $config['plugins']['softr\\pageCompressor'] = ['active' => true];
-$config['plugins']['kronusdark\\pageCount'] = ['active' => true];
+// $config['plugins']['kronusdark\\pageCount'] = ['active' => true];
 $config['plugins']['infostreams\\snippets'] = ['active' => true];
 // $config['plugins']['phile\\rssFeed'] = ['active' => true];
 
