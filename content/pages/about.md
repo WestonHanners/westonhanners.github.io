@@ -5,7 +5,7 @@ Page: true
 Template: info
 -->
 
-![Mothership][1]
+![Picture of Weston][1]
 
 My name is Weston Hanners and I am a Mobile Software Craftsman 
 for [Y Media Labs][2] in Downtown Indianapolis.
