@@ -16,7 +16,7 @@ $config['encryptionKey'] = 'bos[}M78eaL)|xaisUU0ukkFdhoYf04TGjEbgKkfcsMVlxWV=CRY
 /**
  * page title
  */
-$config['site_title'] = '[alloc init]';
+$config['site_title'] = 'alloc init';
 $config['banner_image'] = 'banner';
 $config['pages_order'] = 'meta.date:desc';
 $config['article_count'] = 4;
