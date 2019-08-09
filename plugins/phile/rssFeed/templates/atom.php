@@ -4,7 +4,7 @@
         <title><?= $feed_title ?></title>
         <link><?= $base_url ?></link>
         <description><?= $feed_description ?></description>
-        <atom:link href="<?= $base_url . $feed_url ?>" rel="self" type="application/rss+xml" />
+        <atom:link href="<?= $base_url . "/" . $feed_url ?>" rel="self" type="application/rss+xml" />
         <?php foreach ($pages as $page) : ?>
             <?php if ($page['meta']['blog'] == true) : ?>
             <item>
