@@ -130,35 +130,9 @@ class Page
 
         $baseUrl = Utility::getBaseUrl();
 
-        $callback = function ($match) use ($baseUrl, &$cache) {
-            $url = $match['url'];
-            if (isset($cache[$url])) {
-                return $cache[$url];
-            }
-
-            $dir = dirname($this->meta->getUrl);
-            $path = CONTENT_DIR . $dir . DS . $url;
-
-            if (!file_exists($path)) {
-                // check if URL 'foo' is actually 'foo/index'
-                $dir = basename($this->meta->getUrl);
-                $path = CONTENT_DIR . $dir . DS . $url;
-            }
-
-            if (!file_exists($path)) {
-                return Utility::getBaseUrl() . DS . $url;
-            }
-
-            $contentUrl = Utility::getBaseUrl() . $url;
-            $cache[$url] = $contentUrl;
-            return $cache[$url];
-        };
-
-        $content = preg_replace_callback(
-            '/((?<=src=")|(?<=href="))(?!(http|\/))(?P<url>.*?\.\w{1,4})(?=")/i',
-            $callback,
-            $content
-        );
+        // Fix to make urls absolute
+        $content = preg_replace('~(?:src|action|href)=[\'"]\K[^\'"]*~',"$baseUrl/$0",$content);
+        
         /**
          * @triggerEvent after_parse_content this event is triggered after the content is parsed
          *
