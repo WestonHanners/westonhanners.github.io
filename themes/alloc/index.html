@@ -5,24 +5,11 @@
 <header class="header">
   {% include 'banner.html' %}
 </header>
-<section class="content">
 <div class="article-list">
-{% set articles = config.article_count %}
-{% for page in pages %}
-{% if (page.meta.blog == "true" and articles > 0) %}
-{% set articles = articles - 1 %}
-<article>
-    <h2 class="article-title"><a href={{ page.url }}>{{ page.meta.title }}</a></h2>
-        {% if page.meta.date %}
-        <h4 class="date-line">Published on {{ page.meta.date|date('jS M Y') }}</h4>
-        {% endif %}
-    <div>{{ page.content}}</div>
-</article>
-<hr class="article-divider" />
-{% endif %}
+{% for page in pages|slice(0, config.article_count) if page.meta.blog %}
+    {% include 'article.html' with {article: page} %}
 {% endfor %}
 </div>
-</section>
 {% include 'footer.html' %}
 </body>
 </html>
