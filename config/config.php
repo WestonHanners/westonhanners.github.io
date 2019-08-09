@@ -37,6 +37,6 @@ $config['plugins']['phile\\phpFastCache'] = ['active' => true, 'storage' => 'fil
  */
 $config['plugins']['softr\\pageCompressor'] = ['active' => true];
 $config['plugins']['infostreams\\snippets'] = ['active' => true];
-// $config['plugins']['phile\\rssFeed'] = ['active' => true];
+$config['plugins']['phile\\rssFeed'] = ['active' => true];
 
 return $config;
