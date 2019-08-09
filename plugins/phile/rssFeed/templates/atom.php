@@ -13,8 +13,8 @@
                 <?php if (!empty($page['date'])) : ?>
                     <pubDate><?= date("D, d M Y H:i:s O", strtotime($page['date'])) ?></pubDate>
                 <?php endif; ?>
-                <link><?=  $base_url . "/" . $page['url'] ?></link>
-                <guid isPermaLink="true"><?= $base_url . "/" . $page['url'] ?></guid>
+                <link><?= $page['url'] ?></link>
+                <guid isPermaLink="true"><?= $page['url'] ?></guid>
             </item>
             <?php endif; ?>
         <?php endforeach ?>

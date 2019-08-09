@@ -45,7 +45,7 @@ class Plugin extends AbstractPlugin implements EventObserverInterface
     {
         $pageRespository = new Repository();
         $allPages = $pageRespository->findAll();
-
+        $router = Container::getInstance()->get('Phile_Router');
         $pages = [];
         foreach ($allPages as $page) {
             $meta = $page->getMeta();
@@ -54,7 +54,7 @@ class Plugin extends AbstractPlugin implements EventObserverInterface
             }
             $pages[] = [
                 'title' => $page->getTitle(),
-                'url' => $page->getUrl(),
+                'url' => $router->urlForPage($page->getPageId(), true), 
                 'content' => $page->getContent(),
                 'date' => $meta->get('date'),
                 'meta' => $meta->getAll()
