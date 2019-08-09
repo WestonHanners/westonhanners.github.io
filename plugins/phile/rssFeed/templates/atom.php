@@ -4,8 +4,9 @@
         <title><?= $feed_title ?></title>
         <link><?= $base_url ?></link>
         <description><?= $feed_description ?></description>
-        <atom:link href="<?= $feed_url ?>" rel="self" type="application/rss+xml" />
+        <atom:link href="<?= $base_url . $feed_url ?>" rel="self" type="application/rss+xml" />
         <?php foreach ($pages as $page) : ?>
+            <?php if ($page['meta']['blog'] == true) : ?>
             <item>
                 <title><?= $page['title'] ?></title>
                 <description><![CDATA[<?= $page['content'] ?>]]></description>
@@ -15,6 +16,7 @@
                 <link><?=  $base_url . "/" . $page['url'] ?></link>
                 <guid isPermaLink="true"><?= $base_url . "/" . $page['url'] ?></guid>
             </item>
+            <?php endif; ?>
         <?php endforeach ?>
     </channel>
 </rss>
