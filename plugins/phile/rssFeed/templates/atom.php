@@ -12,8 +12,8 @@
                 <?php if (!empty($page['date'])) : ?>
                     <pubDate><?= date("D, d M Y H:i:s O", strtotime($page['date'])) ?></pubDate>
                 <?php endif; ?>
-                <link><?= $page['url'] ?></link>
-                <guid isPermaLink="true"><?= $page['url'] ?></guid>
+                <link><?=  $base_url . "/" . $page['url'] ?></link>
+                <guid isPermaLink="true"><?= $base_url . "/" . $page['url'] ?></guid>
             </item>
         <?php endforeach ?>
     </channel>
