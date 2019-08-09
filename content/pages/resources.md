@@ -37,7 +37,6 @@ to keep this as up-to-date as I can.
 - [Teehan+Lax](http://teehanlax.com)
 - [Erica Sadun's Blog](http://ericasadun.com)
 - [QualityCoding](http://qualitycoding.org)
-- [Florian Kugler's Blog](http://floriankugler.com/blog)
 - [Objc.io](http://www.objc.io)
 - [Matt Galloway's Blog](http://www.galloway.me.uk)
 - [F\*ing Block Syntax](http://fuckingblocksyntax.com) - Block syntax cheat sheet, URL is NSFW, but site is ok.
@@ -63,9 +62,7 @@ to keep this as up-to-date as I can.
 - [PaintCode](http://www.paintcodeapp.com) - Draw graphics and convert to CoreGraphics calls.
 - [CodeRunner](http://www.krillapps.com/coderunner/) - Run code snippets and experiment without building a whole new project.
 - [Sketch](http://www.bohemiancoding.com/sketch/) - Good app for designing pixel-perfect iOS graphics.
-- [Coffitivity](http://www.coffitivity.com) - Ambient noise for creative people (sounds like you are in a coffee shop).
 - [NatureSpace](http://www.naturespace.com) - Ambient noise (nature themed)
-- [Base](http://itunes.apple.com/us/app/base/id402383384?mt=12&uo=4&partnerId=30&partnerId=30&siteID=5J6ygNnQgI4-5HaY_VomXqNP53BCNKKyTQ) - GUI for editing and examining SQL/SQLite data stores
 - [RESTed](https://itunes.apple.com/us/app/rested/id421879749?mt=12&ign-mpt=uo%3D4) - Tool for testing HTTP requests and API
 - [ASCIIwwdc](http://asciiwwdc.com) - Full searchable transcripts of WWDC sessions
 - [Pixelmator](http://www.pixelmator.com) - Excellent Mac only image editor
