@@ -131,7 +131,7 @@ class Page
         $baseUrl = Utility::getBaseUrl();
 
         // Fix to make urls absolute
-        $content = preg_replace('~(?:src|action|href)=[\'"]\K(?!http)[^\'"]*~',"$baseUrl/$0",$content);
+        $content = preg_replace('~(?:data-src|src|action|href)=[\'"]\K(?!http)[^\'"]*~',"$baseUrl/$0",$content);
 
         /**
          * @triggerEvent after_parse_content this event is triggered after the content is parsed

@@ -107,13 +107,13 @@ class DefaultSnippets extends Snippets {
 		$is_playlist = array_key_exists('list', $query);
 		if ($is_playlist) {
 			$playlist_id = $query['list'];
-			$embed_url = "//www.youtube.com/embed?listType=playlist&list=$playlist_id";
+			$embed_url = "https://www.youtube.com/embed?listType=playlist&list=$playlist_id";
 		} else {
 			$video_id = $query['v'];
-			$embed_url = "//www.youtube.com/embed/$video_id";
+			$embed_url = "https://www.youtube.com/embed/$video_id";
 		}
 
-		return "<div class=\"$class\"><iframe width=\"$width\" height=\"$height\" src=\"\" data-src=\"$embed_url\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>";
+		return "<div class=\"$class\"><iframe width=\"$width\" height=\"$height\" data-src=\"$embed_url\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>";
 	}
 
 	/**
