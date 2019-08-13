@@ -6,10 +6,11 @@
 <div class="navcontainer">
 <div id="topnav" class="navitems">
 <a href="./">[Home]</a>
-<a href="./about">[about me]</a>
-<a href="./resources">[resources]</a>
-<a href="./stuff">[stuff]</a>
-<a href="./posts">[posts]</a>
+{% for page in site.pages | sort 'title' %}
+{% if page.tags contains 'banner' %}
+<a href="{{ page.url }}">[{{ page.title }}]</a>
+{% endif %} 
+{% endfor %}
 <a href="https://twitter.com/WestonHanners">[Twitter]</a>
 <a href="https://github.com/WestonHanners">[Github]</a>
 </div>

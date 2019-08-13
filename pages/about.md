@@ -2,6 +2,7 @@
 title: about me
 layout: info
 permalink: about
+tags: [banner]
 ---
 
 ![Picture of Weston][1]

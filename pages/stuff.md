@@ -3,6 +3,7 @@ title: Stuff
 layout: page
 date: 2018-04-20
 permalink: stuff
+tags: [banner]
 ---
 
 Here are some things of varying quality that I have made. Feel free to download and play with them. 
