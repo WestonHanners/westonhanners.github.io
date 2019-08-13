@@ -14,9 +14,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: alloc-init
+description: blog for @WestonHanners
 email: admin@alloc-init.com
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://alloc-init.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://alloc-init.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: WestonHanners
 github_username:  westonhanners
 encoding: utf-8
@@ -25,6 +26,14 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-paginate-v2
+
+exclude: 
+  - devmode
+  - prepare
+  - compile
+  - vendor
+  - README.md
+  - Gemfile*
 
 pagination:
   enabled: true
@@ -38,6 +47,8 @@ pagination:
     after: 2
 
 sass:
-  sass_dir: _sass
+  sass_dir: _sass   
+  style: compressed
+
 
 permalink: /blog/:year.:month.:day
