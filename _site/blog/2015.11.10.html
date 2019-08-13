@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Made with Liquid -->
+<meta charset=""/>
+<base href="/"/>
+<title> Per-View Auto-Rotation Locking Made Easy for iOS 8 and 9 | alloc-init</title>
+
+
+<meta name="description" content="<p>This week I was working on an app where the client wanted to lock the
+app rotation to Portrait on some screens and Landscape on others.
+Luckily I had built all of my views in AutoLayout so they already
+supported the required layouts, I just needed to lock them. Rotation
+API’s are one of the most frequently deprecated parts of UIKit so when I
+started working on this, I had to look it up, and let me say, it’s
+pretty noisy out there. After an hour or so of research and another hour
+or two of experimentation, I finally boiled it down to two parts.</p>
+
+" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@westonhanners"/>
+<meta name="twitter:creator" content="@westonhanners"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content=" Per-View Auto-Rotation Locking Made Easy for iOS 8 and 9 |  alloc-init"/>
+<meta property="og:description" content="<p>This week I was working on an app where the client wanted to lock the
+app rotation to Portrait on some screens and Landscape on others.
+Luckily I had built all of my views in AutoLayout so they already
+supported the required layouts, I just needed to lock them. Rotation
+API’s are one of the most frequently deprecated parts of UIKit so when I
+started working on this, I had to look it up, and let me say, it’s
+pretty noisy out there. After an hour or so of research and another hour
+or two of experimentation, I finally boiled it down to two parts.</p>
+
+"/>
+<meta property="og:url" content="http://alloc-init.com//blog/2015.11.10"/>
+<meta property="og:site_name" content="alloc-init"/>
+<meta property="fb:admins" content="weston.hanners"/>
+<meta property="og:image" content="images/logo-v3-1000x1000.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="test/assets/css/main.css, " type="text/css"/>
+<link rel="icon" href="images/logo-v3-16x16.png" sizes="16x16" />
+<link rel="icon" href="images/logo-v3-32x32.png" sizes="32x32" />
+<link rel="icon" href="images/logo-v3-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="images/logo-v3-180x180.png" />
+</head>
+
+<body>
+<header class="header">
+  <div class="banner">
+	<a href="./">
+	...alloc] init];
+	</a>
+</div>
+<div class="navcontainer">
+<div id="topnav" class="navitems">
+<a href="./">[Home]</a>
+<a href="./about">[about me]</a>
+<a href="./resources">[resources]</a>
+<a href="./stuff">[stuff]</a>
+<a href="./posts">[posts]</a>
+<a href="https://twitter.com/WestonHanners">[Twitter]</a>
+<a href="https://github.com/WestonHanners">[Github]</a>
+</div>
+
+<div class="icon">
+	<a href="javascript:void(0);" onclick="toggleNav()">&#9776;</a>
+</div>
+
+</div>
+</header>
+<section class="content">
+  <article>
+  <h1 class="article-title">Per-View Auto-Rotation Locking Made Easy for iOS 8 and 9</h1>
+  
+  <h4 class="date-line">Published on Nov 10th, 2015</h4>
+  
+  <p>This week I was working on an app where the client wanted to lock the
+app rotation to Portrait on some screens and Landscape on others.
+Luckily I had built all of my views in AutoLayout so they already
+supported the required layouts, I just needed to lock them. Rotation
+API’s are one of the most frequently deprecated parts of UIKit so when I
+started working on this, I had to look it up, and let me say, it’s
+pretty noisy out there. After an hour or so of research and another hour
+or two of experimentation, I finally boiled it down to two parts.</p>
+
+<p>Select ALL POSSIBLE interface orientations you plan to support in your Info.plist.</p>
+
+<p><img src="images/InterfaceOrientation.png" alt="Screenshot" /></p>
+
+<p>Then you <em>really</em> only have to implement one method.</p>
+
+<h2 id="swift-12">Swift 1.2</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>override func supportedInterfaceOrientations() -&gt; Int {
+    return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+}
+</code></pre></div></div>
+
+<h2 id="swift-20">Swift 2.0</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>override func supportedInterfaceOrientations() -&gt; UIInterfaceOrientationMask {
+    return UIInterfaceOrientationMask.Portrait
+}
+</code></pre></div></div>
+
+<p>Making sure to select Portrait or Landscape depending on what you want.
+This is probably one of the messiest API transitions I have seen
+recently and it took me a while to actually notice what I kept doing
+wrong in Swift 1.2. (that Int cast is ugly)</p>
+
+<p><a href="downloads/RotationTest.zip">Sample Code</a></p>
+
+
+  </article>
+</section>
+<script type="text/javascript" async defer src="/js/navigation.min.js"></script>
+<script type="text/javascript" async defer src="/js/asyncyoutube.min.js"></script>
+
+<div class="footer">
+    [ ©2019 <a href="http://twitter.com/@WestonHanners">Weston Hanners</a> | <a href="https://alloc-init.com/feed">rss</a> ]
+</div>
+<!--Powered by Jekyll and Amazon Lightsail, Alloc Theme by Weston Hanners-->
+
+</body>
+</html>

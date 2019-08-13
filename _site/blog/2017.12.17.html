@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Made with Liquid -->
+<meta charset=""/>
+<base href="/"/>
+<title> The Trap of Libraries | alloc-init</title>
+
+
+<meta name="description" content="<p>One of the worst feelings I can ever have in iOS Software Engineering is cloning
+an existing project for the first time and looking at the Podfile. I feel it gives
+me a good sense of how the project is going to go. If there are only 1 or 2 pods,
+I sigh a breath of relief, if there are more, I start the mourning process.</p>
+
+" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@westonhanners"/>
+<meta name="twitter:creator" content="@westonhanners"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content=" The Trap of Libraries |  alloc-init"/>
+<meta property="og:description" content="<p>One of the worst feelings I can ever have in iOS Software Engineering is cloning
+an existing project for the first time and looking at the Podfile. I feel it gives
+me a good sense of how the project is going to go. If there are only 1 or 2 pods,
+I sigh a breath of relief, if there are more, I start the mourning process.</p>
+
+"/>
+<meta property="og:url" content="http://alloc-init.com//blog/2017.12.17"/>
+<meta property="og:site_name" content="alloc-init"/>
+<meta property="fb:admins" content="weston.hanners"/>
+<meta property="og:image" content="images/logo-v3-1000x1000.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="test/assets/css/main.css, " type="text/css"/>
+<link rel="icon" href="images/logo-v3-16x16.png" sizes="16x16" />
+<link rel="icon" href="images/logo-v3-32x32.png" sizes="32x32" />
+<link rel="icon" href="images/logo-v3-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="images/logo-v3-180x180.png" />
+</head>
+
+<body>
+<header class="header">
+  <div class="banner">
+	<a href="./">
+	...alloc] init];
+	</a>
+</div>
+<div class="navcontainer">
+<div id="topnav" class="navitems">
+<a href="./">[Home]</a>
+<a href="./about">[about me]</a>
+<a href="./resources">[resources]</a>
+<a href="./stuff">[stuff]</a>
+<a href="./posts">[posts]</a>
+<a href="https://twitter.com/WestonHanners">[Twitter]</a>
+<a href="https://github.com/WestonHanners">[Github]</a>
+</div>
+
+<div class="icon">
+	<a href="javascript:void(0);" onclick="toggleNav()">&#9776;</a>
+</div>
+
+</div>
+</header>
+<section class="content">
+  <article>
+  <h1 class="article-title">The Trap of Libraries</h1>
+  
+  <h4 class="date-line">Published on Dec 17th, 2017</h4>
+  
+  <p>One of the worst feelings I can ever have in iOS Software Engineering is cloning
+an existing project for the first time and looking at the Podfile. I feel it gives
+me a good sense of how the project is going to go. If there are only 1 or 2 pods,
+I sigh a breath of relief, if there are more, I start the mourning process.</p>
+
+<p>It’s not like having a handful of pods are always a bad thing, but most of the time
+they definitely are.</p>
+
+<p>Here is a short list of things that I don’t mind seeing in a Podfile.</p>
+
+<ul>
+  <li>HockeyApp</li>
+  <li>Fabric</li>
+  <li>Google Analytics</li>
+  <li>Urban Airship</li>
+</ul>
+
+<p>Libraries like these are helpful, they integrate backend services that might be
+overwhelming to create from scratch, and allow you to focus more on your app.
+While they tend to be a little larger than one would like, the companies that maintain
+them tend to spend time making sure they are low impact, relatively bug-free, and
+fairly easy to keep updated.</p>
+
+<p>Here is a list of libraries that send a chill down my spine.</p>
+
+<ul>
+  <li>ReactiveCocoa</li>
+  <li>Mantle</li>
+  <li>AFNetworking</li>
+  <li>Facebook Pop</li>
+  <li>ZXingObjC</li>
+</ul>
+
+<p>There are many more I could list here, but let’s get to the point. These libraries
+are a loan from the bank of tech debt. Using some of these commits large portions
+of your code to require constant maintenance, and you can only avoid it for so long.</p>
+
+<h2 id="the-first-problem">The First Problem</h2>
+
+<p>When I tell people my thoughts on these libraries, they always tell me…</p>
+
+<blockquote>
+  <p>They are open source, if there is something you don’t like you can always just fix it.</p>
+</blockquote>
+
+<p>or</p>
+
+<blockquote>
+  <p>If the maintainer goes away or stops supporting it, you can take it up.</p>
+</blockquote>
+
+<p>Let’s run a little thought experiment on this, shall we?</p>
+
+<p>Take AFNetworking for example…</p>
+
+<p>If I am building a library that uses Apple’s URLSession to build my network stack,
+I can be fairly confident that it will be maintained as long as the platform is.
+It has a lot of features, is relatively bug-free, and I don’t have to pour over its
+source-code with every update to make sure it is following the new best practices.</p>
+
+<p>However, if I use AFNetworking, I potentially have to wait weeks before
+new language, security, and platform features are integrated. I am not sure if
+you remember the <a href="https://gist.github.com/AlamofireSoftwareFoundation/f784f18f949b95ab733a">certificate pinning issue</a>, but the gist of it is that the
+maintainers identified a security issue introduced in one of their patches and,
+to their credit, they patched it in about a week. The problem arose in that every
+developer who used the library didn’t follow the news, or had to wait for internal
+company processes to allow a release, then wait for Apple’s (at the time), slow,
+app review to patch this vulnerability. The effect of this was that over 1000 apps
+on the app store had this issue.</p>
+
+<p>Now this is a big, frequently used library and the maintainers did the best they
+could to fix the problem as quickly and as loudly as they could, but can you say
+that you follow the git issues and blogs related to every single library you use?
+A small “syntactic sugar” library could easily introduce security issues without
+your knowing, and if it’s not used by A LOT of people, it will fly completely under
+your radar (I will avoid the obvious pun here).</p>
+
+<p>And what if this library wasn’t even well maintained?</p>
+
+<p>Yes, you could fork the library and start maintaining it yourself, but do you think
+your clients and managers will agree that spending several hours a week maintaining a
+library is a good thing? How would they feel if you are only using a couple functions?
+If they are ok with it, you probably have a great job with very understanding
+colleagues and you are probably on retainer, or work in a big corporation.
+Consulting/Agency work doesn’t usually afford this luxury.</p>
+
+<p>Even if you only use popular, well-maintained libraries, you can still be hit by…</p>
+
+<h2 id="the-second-problem">The Second Problem</h2>
+
+<p>In the beginning of this article, I talked about the dread I feel opening up an
+existing project’s Podfile for the first time, the worst thing you can see is at
+the top.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>platform :ios, '6.0'
+</code></pre></div></div>
+
+<p>This means one or two of the following.</p>
+
+<ol>
+  <li>This project hasn’t been updated in a LONG time.</li>
+  <li>This project relies on a library that no longer exists.</li>
+</ol>
+
+<p>If the issue is the former, you will probably have well over 100 random deprecated
+API warnings, and if you are lucky, only a couple hard errors. If it is the latter,
+get prepared to spend a lot of time extracting that pod from the application.</p>
+
+<p>For example, I am looking forward to having to spend quite a few hours extracting
+Mantle from an application because the app heavily relies on a feature no longer
+present. This is not even close to the first time I have had to deal with this.
+Smaller libraries are a bit more loose with redefining their entire API in an
+update, completely breaking the hosting app, and sometimes introducing new bugs
+that can take weeks of updating to work out.</p>
+
+<p>It can also be easy for someone working on the project to work around issues and
+never actually update the library. When it finally comes time that you do run
+<code class="highlighter-rouge">pod update</code>, you might find that you now have a week or more of fixes to get
+the new library running. Maybe you are the good guy (or gal) who spends time
+keeping pods updated and therefore you don’t have to waste weeks doing the epic
+rewrite, if you are this person, would you like a <a href="https://ymedialabs.com/careers/">job</a>?</p>
+
+<p>Libraries can be useful when a task is too complicated or requires large amounts
+of infrastructure, but what I see a lot of the time are tiny, single-purpose,
+libraries that only marginally improve the workflow.</p>
+
+<p>This sort of library can also dictate your entire architecture. They can lock you
+into something that might be trendy now, but in a year or two, you find yourself
+scratching your head and wondering how you ever got into this mess in the first
+place.</p>
+
+<h2 id="the-solution">The Solution</h2>
+
+<p>If you are using a smaller library, why not write it yourself? Autolayout DSL’s,
+JSON parsers, custom animations; these aren’t generally very complicated to do
+on your own and since you wrote it, you should be able to easily fix it when
+needed. It will reduce app bloat, improve security, and you will get better at
+the problems these libraries solve.</p>
+
+<p>Reducing boilerplate and simplifying common programming tasks are the siren
+songs of software engineering, they can be quite attractive, and it is easy
+to add them to your project. In reality, for larger projects, they are traps
+that lock you into spending quite a lot of your time putting out the fires
+they can create.</p>
+
+<p>If you want my opinion, they are best avoided when possible.</p>
+
+<h2 id="afterthoughts">Afterthoughts</h2>
+
+<p>It was not my intent to spend so much time picking on AFNetworking, it
+just provided a good example for issues I will encounter. AFNetworking was
+incredibly useful back before NSURLSession was a thin, but it is so easy to
+do it right with just foundation libraries these days, I wonder why it is
+still so popular for simple networking tasks. If you know why, please
+<a href="https://twitter.com/WestonHanners">tweet at me</a>.</p>
+
+
+  </article>
+</section>
+<script type="text/javascript" async defer src="/js/navigation.min.js"></script>
+<script type="text/javascript" async defer src="/js/asyncyoutube.min.js"></script>
+
+<div class="footer">
+    [ ©2019 <a href="http://twitter.com/@WestonHanners">Weston Hanners</a> | <a href="https://alloc-init.com/feed">rss</a> ]
+</div>
+<!--Powered by Jekyll and Amazon Lightsail, Alloc Theme by Weston Hanners-->
+
+</body>
+</html>

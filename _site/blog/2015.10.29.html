@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Made with Liquid -->
+<meta charset=""/>
+<base href="/"/>
+<title> If-Let Assignment Operator | alloc-init</title>
+
+
+<meta name="description" content="<blockquote>
+  <p>This article was updated on 12/06/2017 to account for Swift 4</p>
+</blockquote>
+
+" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@westonhanners"/>
+<meta name="twitter:creator" content="@westonhanners"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content=" If-Let Assignment Operator |  alloc-init"/>
+<meta property="og:description" content="<blockquote>
+  <p>This article was updated on 12/06/2017 to account for Swift 4</p>
+</blockquote>
+
+"/>
+<meta property="og:url" content="http://alloc-init.com//blog/2015.10.29"/>
+<meta property="og:site_name" content="alloc-init"/>
+<meta property="fb:admins" content="weston.hanners"/>
+<meta property="og:image" content="images/logo-v3-1000x1000.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="test/assets/css/main.css, " type="text/css"/>
+<link rel="icon" href="images/logo-v3-16x16.png" sizes="16x16" />
+<link rel="icon" href="images/logo-v3-32x32.png" sizes="32x32" />
+<link rel="icon" href="images/logo-v3-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="images/logo-v3-180x180.png" />
+</head>
+
+<body>
+<header class="header">
+  <div class="banner">
+	<a href="./">
+	...alloc] init];
+	</a>
+</div>
+<div class="navcontainer">
+<div id="topnav" class="navitems">
+<a href="./">[Home]</a>
+<a href="./about">[about me]</a>
+<a href="./resources">[resources]</a>
+<a href="./stuff">[stuff]</a>
+<a href="./posts">[posts]</a>
+<a href="https://twitter.com/WestonHanners">[Twitter]</a>
+<a href="https://github.com/WestonHanners">[Github]</a>
+</div>
+
+<div class="icon">
+	<a href="javascript:void(0);" onclick="toggleNav()">&#9776;</a>
+</div>
+
+</div>
+</header>
+<section class="content">
+  <article>
+  <h1 class="article-title">If-Let Assignment Operator</h1>
+  
+  <h4 class="date-line">Published on Oct 29th, 2015</h4>
+  
+  <blockquote>
+  <p>This article was updated on 12/06/2017 to account for Swift 4</p>
+</blockquote>
+
+<p>How many times have you had to implement this pattern?</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if let value = someOptionalValue as? String {
+    self.value = value
+}
+</code></pre></div></div>
+
+<p>I use this all the time when parsing through JSON or implementing
+NSCoding and I think its a little over verbose for Swift, I felt sure
+there was a better way. <a href="http://nshipster.com/swift-operators/">NSHipster</a> mentions a logical OR assignment
+operator (||=) which would be perfect however, it doesn’t seem to be
+implemented for generics <em>(Please let me know if I am wrong here)</em>. I
+thought I would give it a try…</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>precedencegroup AssignmentPrecedence {
+    associativity: right
+}
+
+infix operator ?= : AssignmentPrecedence
+
+func ?=&lt;T&gt;(left: inout T, right: T?) {
+    if let value = right {
+        left = value
+    }
+}
+</code></pre></div></div>
+
+<p>It actually worked quite well, I was able to reduce the original code to
+this</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>self.value ?= someOptionalValue as? String
+</code></pre></div></div>
+
+<p>Might not be the biggest win, but when you have several of these
+assignments in a row, it saves a lot of code and makes it much more
+readable. One more thing… and I am still trying to figure out exactly
+what is going on here, but I ended up having to define a second function
+to assign to optionals. The only difference is the left parameter now is
+T?</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func ?=&lt;T&gt;(left: inout T?, right: T?) {
+    if let value = right {
+        left = value
+    }
+}
+
+var someOptionalString: String?
+
+someOptionalString ?= newValue // Will assign when newValue is not optional
+</code></pre></div></div>
+
+<p>If you are interested in seeing this in action, here is the <a href="downloads/if-let-operator.playground.zip">Playground</a></p>
+
+
+  </article>
+</section>
+<script type="text/javascript" async defer src="/js/navigation.min.js"></script>
+<script type="text/javascript" async defer src="/js/asyncyoutube.min.js"></script>
+
+<div class="footer">
+    [ ©2019 <a href="http://twitter.com/@WestonHanners">Weston Hanners</a> | <a href="https://alloc-init.com/feed">rss</a> ]
+</div>
+<!--Powered by Jekyll and Amazon Lightsail, Alloc Theme by Weston Hanners-->
+
+</body>
+</html>

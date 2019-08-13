@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Made with Liquid -->
+<meta charset=""/>
+<base href="/"/>
+<title> Inheriting Equatable in Swift | alloc-init</title>
+
+
+<meta name="description" content="<p>Today, I was working on creating some Swift objects that needed to
+conform to the Equatable protocol. Generally this is quite easy as you
+just implement the == function for the class.</p>
+
+" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@westonhanners"/>
+<meta name="twitter:creator" content="@westonhanners"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content=" Inheriting Equatable in Swift |  alloc-init"/>
+<meta property="og:description" content="<p>Today, I was working on creating some Swift objects that needed to
+conform to the Equatable protocol. Generally this is quite easy as you
+just implement the == function for the class.</p>
+
+"/>
+<meta property="og:url" content="http://alloc-init.com//blog/2015.08.25"/>
+<meta property="og:site_name" content="alloc-init"/>
+<meta property="fb:admins" content="weston.hanners"/>
+<meta property="og:image" content="images/logo-v3-1000x1000.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="test/assets/css/main.css, " type="text/css"/>
+<link rel="icon" href="images/logo-v3-16x16.png" sizes="16x16" />
+<link rel="icon" href="images/logo-v3-32x32.png" sizes="32x32" />
+<link rel="icon" href="images/logo-v3-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="images/logo-v3-180x180.png" />
+</head>
+
+<body>
+<header class="header">
+  <div class="banner">
+	<a href="./">
+	...alloc] init];
+	</a>
+</div>
+<div class="navcontainer">
+<div id="topnav" class="navitems">
+<a href="./">[Home]</a>
+<a href="./about">[about me]</a>
+<a href="./resources">[resources]</a>
+<a href="./stuff">[stuff]</a>
+<a href="./posts">[posts]</a>
+<a href="https://twitter.com/WestonHanners">[Twitter]</a>
+<a href="https://github.com/WestonHanners">[Github]</a>
+</div>
+
+<div class="icon">
+	<a href="javascript:void(0);" onclick="toggleNav()">&#9776;</a>
+</div>
+
+</div>
+</header>
+<section class="content">
+  <article>
+  <h1 class="article-title">Inheriting Equatable in Swift</h1>
+  
+  <h4 class="date-line">Published on Aug 25th, 2015</h4>
+  
+  <p>Today, I was working on creating some Swift objects that needed to
+conform to the Equatable protocol. Generally this is quite easy as you
+just implement the == function for the class.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func ==(rhs: , lhs: ) -&gt; Bool {
+    return 
+}
+</code></pre></div></div>
+
+<p>The issue is these functions are required to be global (that’s the way
+operator declarations work in Swift), so there is no easy way to inherit
+your equality from super classes. Here is an incredibly contrived
+example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Person: Equatable {
+    var name: String = ""
+}
+
+class Employee: Person {
+    var position: String = ""
+}
+
+func ==(lhs: Person, rhs: Person) -&gt; Bool {
+    return lhs.name == rhs.name
+}
+
+func ==(lhs: Employee, rhs: Employee) -&gt; Bool {
+    return lhs.name == rhs.name &amp;&amp; lhs.postion == rhs.position
+}
+</code></pre></div></div>
+
+<p>Say we want to implement Equatable for
+both of these classes. We will want Equatable for Person objects to mean
+they have the same name (this is really all we have in this class, but
+pretend it was more complicated). Employees can have the same name, but
+their equality will also depend on their position (manager, worker,
+owner, etc..). We don’t want to have to reimplement the Person ==
+functionality in our subclass, usually you would want to call to super,
+but since Swift operators are global, you have no sense of super.
+The solution is actually quite simple when you think about it. You want
+to move the Equatable logic into the classes where they can call to
+super. Just have your == function call into equalTo() on your instances,
+you can create it like this.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func ==(lhs: Person, rhs: Person) -&gt; Bool {
+    return lhs.equalTo(rhs)
+}
+
+func equalTo(person: Person) -&gt; Bool {
+    return self.name == person.name
+}
+</code></pre></div></div>
+
+<p>Now you can then easily call the equalTo() function in your parent
+class. Here is the the completed solution, and <a href="downloads/Equatable.playground.zip">Playground</a>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func ==(lhs: Person, rhs: Person) -&gt; Bool {
+    return equalTo(rhs)
+}
+
+func ==(lhs: Employee, rhs: Employee) -&gt; Bool {
+    return lhs.equalTo(rhs)
+}
+
+class Person: Equatable {
+
+    var name: String = "Bob"
+
+    func equalTo(person: Person) -&gt; Bool {
+        return self.name == person.name
+    }
+}
+
+class Employee: Person {
+
+    var position: String = "Manager"
+
+    func equalTo(person: Employee) -&gt; Bool {
+        var match = super.equalTo(person)
+        match = match &amp;&amp; self.position == person.position
+        return match
+    }
+}
+</code></pre></div></div>
+
+<blockquote>
+  <p>This was tested on Swift 1.2</p>
+</blockquote>
+
+<p><strong>UPDATE 11/6/2015:</strong> Creating an isEqual function on NSObject subclasses was causing issues, changing to
+equalTo() fixes this.</p>
+
+
+  </article>
+</section>
+<script type="text/javascript" async defer src="/js/navigation.min.js"></script>
+<script type="text/javascript" async defer src="/js/asyncyoutube.min.js"></script>
+
+<div class="footer">
+    [ ©2019 <a href="http://twitter.com/@WestonHanners">Weston Hanners</a> | <a href="https://alloc-init.com/feed">rss</a> ]
+</div>
+<!--Powered by Jekyll and Amazon Lightsail, Alloc Theme by Weston Hanners-->
+
+</body>
+</html>

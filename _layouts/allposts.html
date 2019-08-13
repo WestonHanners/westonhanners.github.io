@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include header.liquid %}
+<body>
+<header class="header">
+{% include banner.liquid %}
+</header>
+<section class="content">
+{% for post in site.posts %}
+<div class="article-list">
+<h2><a href={{ post.url }}>{{ post.title }}</a></h2>
+</div>
+{% endfor %}
+</section>
+{% include footer.liquid %}
+</body>
+</html>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Made with Liquid -->
+<meta charset=""/>
+<base href="/"/>
+<title> alloc-init - page 3 | alloc-init</title>
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@westonhanners"/>
+<meta name="twitter:creator" content="@westonhanners"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content=" alloc-init - page 3 |  alloc-init"/>
+<meta property="og:description" content=""/>
+<meta property="og:url" content="http://alloc-init.com//page/3/index.html"/>
+<meta property="og:site_name" content="alloc-init"/>
+<meta property="fb:admins" content="weston.hanners"/>
+<meta property="og:image" content="images/logo-v3-1000x1000.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="test/assets/css/main.css, " type="text/css"/>
+<link rel="icon" href="images/logo-v3-16x16.png" sizes="16x16" />
+<link rel="icon" href="images/logo-v3-32x32.png" sizes="32x32" />
+<link rel="icon" href="images/logo-v3-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="images/logo-v3-180x180.png" />
+</head>
+
+<body>
+<header class="header">
+<div class="banner">
+	<a href="./">
+	...alloc] init];
+	</a>
+</div>
+<div class="navcontainer">
+<div id="topnav" class="navitems">
+<a href="./">[Home]</a>
+<a href="./about">[about me]</a>
+<a href="./resources">[resources]</a>
+<a href="./stuff">[stuff]</a>
+<a href="./posts">[posts]</a>
+<a href="https://twitter.com/WestonHanners">[Twitter]</a>
+<a href="https://github.com/WestonHanners">[Github]</a>
+</div>
+
+<div class="icon">
+	<a href="javascript:void(0);" onclick="toggleNav()">&#9776;</a>
+</div>
+
+</div>
+</header>
+<div class="article-list">
+
+<section class="content">
+<article>
+<h1 class="article-title"><a href=/blog/2016.04.07>UITableView Storyboard Design</a></h2>
+
+<h4 class="date-line">Published on Apr 7th, 2016</h4>
+
+<div><p>Frequently I will come across some code for an iOS app that looks like
+this.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -&gt; UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("basicCell", forIndexPath: indexPath)
+        cell.textLabel?.text = "Some Test Data"
+        return cell
+    }
+
+    func numberOfSectionsInTableView(tableView: UITableView) -&gt; Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+        return 20
+    }
+}
+</code></pre></div></div>
+
+<p>And a storyboard that looks like this.</p>
+
+<p><img src="images/Screenshot-2016-04-06-22.38.37.png" alt="Screenshot 1" /></p>
+
+<p>Now, there is nothing <em>wrong </em>about this, a lot of Apple code
+demonstrates doing this exact thing. You insert a tableView where it is
+required, implement delegate and datasource protocols, drag connections
+in your storyboard and you are done, but we can do a lot better. Let’s
+begin by describing two of the big issues with this particular pattern.</p>
+
+<ul>
+  <li>This tableView is not reusable, you will have to rebuild it, along
+with it’s prototype cells in every screen that requires this data.</li>
+  <li>Your viewController will become polluted with code to handle taps,
+edits and actions for this tableView and will contribute to creating
+a “Massive View Controller”</li>
+</ul>
+
+<p>Xcode has given us the tools to improve this quite a bit right off the
+bat. If you look in the object browser in Xcode, you will find an object
+you are unlikely to have used before.</p>
+
+<p><img src="images/Screenshot-2016-04-06-22.33.15.png" alt="Screenshot 2" /></p>
+
+<p>This will allow you to embed a scene from your storyboard directly into
+another. Let’s see what this looks like. Start by deleting your old
+tableView then dragging out a UIContainerView and setting its
+constraints. You would want the container to be positioned in the exact
+spot you want your tableView to be. You will notice it created a new
+scene attached to it, it’s a generic UIViewController, go ahead and
+delete that for now. Drag a new UITableViewController out into your
+storyboard, we need to reconnect it to the container.</p>
+
+<p><img src="images/segueconnection.gif" alt="Segue Connection" /></p>
+
+<p>You now have a UITableViewController that can be used between multiple
+scenes in your storyboard. You just set the controller’s class, stick
+your delegate/datasource methods in and you are good to go. But we
+aren’t done yet, in Xcode 7, Apple gave us Storyboard references. By
+using references, you can embed this tableView in completely different
+storyboards. Start by dragging out one of these guys into your <em>other</em>
+storyboard</p>
+
+<p><img src="images/Screenshot-2016-04-06-22.34.23.png" alt="Screenshot 4" /></p>
+
+<p>Next you want to set its storyboard and identifier (I have my tableView
+scene from the above the identifier “tableViewController”, but you can
+make something more fitting for your app). The identifier here needs to
+match whatever you put in your tableView scene’s “Storyboard ID”.</p>
+
+<p><img src="images/Screenshot-2016-04-06-22.35.20.png" alt="Screenshot 5" /></p>
+
+<p>Now you can repeat the same steps as above to create and connect a
+UIContainerView to this new reference and <em>voila</em> you have embedded the
+tableView here as well. I hope this helps you improve your app structure
+and write less code. I was blown away when I found out how to do this.
+If you have any questions, poke me on twitter and I will try to help you
+out.</p>
+
+</div>
+</article>
+<hr class="article-divider" />
+</section>
+
+<section class="content">
+<article>
+<h1 class="article-title"><a href=/blog/2016.01.27>How to Start an iOS App Portfolio</a></h2>
+
+<h4 class="date-line">Published on Jan 27th, 2016</h4>
+
+<div><p>Since my post <a href="blog/2016.01.26">yesterday</a>,
+the most common question I have received is</p>
+
+<blockquote>
+  <p>“What sort of app should I build for my Portfolio?”</p>
+</blockquote>
+
+<p>This is an interesting question. Ideally, you
+would do the same thing you would if you wanted to build an app not for
+a portfolio. Start by identifying a problem that you feel like you can
+solve and then solve it in the best way possible. But I can imagine a
+new developer might not be ready to deal with all the issues surrounding
+developing an original idea from scratch. That said, my goto response is
+usually “Make a Twitter app”. Twitter clients are interesting because
+they will exercise a lot of the skills required to build apps in
+general. I will list a few of the things I would expect a portfolio
+quality Twitter app to use (or any portfolio quality app).</p>
+
+<h2 id="it-uses-uitableview">It Uses UITableView…</h2>
+
+<p>Most iOS apps that I have built have used UITableView in some way or
+another, it’s probably the most common user interface element in a
+standard app and being able to demonstrate its usage looks great when
+applying for a job. This works great for building a Twitter timeline.
+Try to implement swipes to add actions to your rows and make sure you
+show proper cell reuse. Look up methods for paging tweets so that when
+you reach the bottom of the timeline, more cells will load in.</p>
+
+<h2 id="it-uses-http-api">It Uses HTTP API…</h2>
+
+<p>There are not many apps for iOS that won’t need some sort of network
+resource and being able to connect, authenticate and use data from a web
+service is something you end up doing a lot. Now, I do think you can get
+away with using the Twitter SDK, but attempting their REST web service
+would really show you know how to connect to and use HTTP web services.</p>
+
+<h2 id="it-uses-interesting-ui">It Uses Interesting UI…</h2>
+
+<p>A lot of customers like their iOS apps to stand out and a Twitter app
+presents a lot of opportunities to flex your UI building skills and make
+something interesting and fun to use. Interesting UI can be anything
+from some sort of custom-built button to a use of graphics and
+animations to make your app feel fun and alive. Something I like to do
+is look at some of the more popular apps on the AppStore and try to see
+if I can duplicate some of the animations and UI elements that they use.</p>
+
+<h2 id="it-uses-persistence-and-security">It Uses Persistence and Security…</h2>
+
+<p>There is not much you really need to persist in a twitter app except for
+one important piece, credentials. You will need to show how to store
+user credentials (or more likely their token) in a secure way. Use of
+the Keychain API is your friend here and while it’s a bit of a pain to
+learn, it’s better than leaking user data and putting accounts at risk.
+Don’t take security lightly</p>
+
+<h2 id="it-is-relatively-simple-to-build">It is relatively simple to build…</h2>
+
+<p>A Twitter app doesn’t take a year to build, so you can probably whip one
+out in a week or two if you can find the time to sit down and code.
+Portfolio apps don’t need to be big complex pieces of software, iOS
+tends to work best with simple apps and so it’s perfectly fine to build
+simple apps for your portfolio. Twitter is just one of the things I like
+to suggest because it touches so many commonly used parts of iOS. If you
+are still wanting more, here are a few other ideas to get your gears
+turning.</p>
+
+<ul>
+  <li>Notes app ( Demonstrates text manipulation, bonus points for iCloud
+syncing the notes)</li>
+  <li>Where Did I Park? (An app to mark places on a map and store them for
+later, demonstrate the use of the location API)</li>
+  <li>Painting App (Demonstrates use of Touch and Graphics API)</li>
+  <li>Alarm Clock (Use local notification and audio playback)</li>
+</ul>
+
+<p>Whatever you decide to build, try to follow some sort of style guide and
+make your code as clean and easy to read as possible, you will want to
+to be something you can print out and show to recruiters if need-be.</p>
+
+<p><strong>TL;DR:</strong> Build an app that is simple, yet uses as many common iOS
+features as possible. Make it as pretty as you can, and polish to a
+shine. Repeat till you have a couple of apps under your belt.</p>
+
+<p>Good Luck!</p>
+
+</div>
+</article>
+<hr class="article-divider" />
+</section>
+
+<section class="content">
+<article>
+<h1 class="article-title"><a href=/blog/2016.01.26>How to become an entry level iOS developer</a></h2>
+
+<h4 class="date-line">Published on Jan 26th, 2016</h4>
+
+<div><p>I have been mentoring some friends who are interested in a career in
+iOS development, and was asked to come up with some sort of list of what
+they should know to get started. This seems like a good topic for a blog
+post, so without (much) further ado, I give you my list of what you
+should know to become an Entry Level iOS Developer.</p>
+
+<h2 id="basic-cs-knowledge">Basic CS Knowledge</h2>
+
+<p>I don’t believe that being a computer science PHD is a requirement for
+getting into mobile application development, In my experience, heavy CS
+concepts don’t often come up in day-to-day work, but a lot of employers
+still like to run their interviewees through CS puzzles. So, for the
+novice, I would recommend watching the <a href="https://www.youtube.com/playlist?list=PLhQjrBD2T383Xfn0zECHrOTpfOSlptPAB">Harvard CS50 courses on YouTube</a>
+as a great place to get started, they are easy to follow and actually
+pretty interesting to watch.</p>
+
+<p>If you are planning to interview with one of the big companies like
+Google or Apple, you might benefit by picking up a couple algorithm
+books to study.</p>
+
+<p><a href="http://www.amazon.com/Cracking-Coding-Interview-Fourth-Edition/dp/145157827X">Cracking the Coding Interview</a>
+by Gayle Leekman</p>
+
+<p><a href="http://www.amazon.com/Algorithm-Design-Manual-Steven-Skiena/dp/1849967202">The Algorithm Design Manual</a>
+by Steven S. Skiena</p>
+
+<h2 id="swift-or-objective-c">Swift or Objective-C</h2>
+
+<p>You don’t have to be an expert, but you should be able to write in at
+least one of these languages without having to look up syntax very
+often. Just get yourself to a point where you can write classes,
+structs, loops, functions, assign variables and evaluate expressions
+without help.</p>
+
+<p>Right now we are in a strange time where it’s still acceptable to be
+hired only knowing Objective-C. Swift is pretty new and unless you are
+applying for a company that has a lot of project turnover, you will
+mostly be writing in Objective-C anyways. That said, there are plenty of
+companies taking the plunge to Swift (including the one I work for) and
+I don’t think it will be too difficult to find a job if it’s the only
+language you know. The important thing is to be fairly proficient in
+whichever you choose, and get familiar enough with the other that you
+can at least read the code.</p>
+
+<h2 id="frameworks-and-api">Frameworks and API</h2>
+
+<p>Cocoa Touch is updated yearly and with it things come and go. It is not
+unusual for me to work with the Apple Documentation open most of the
+time; there is just too damn much to try to keep in your head.</p>
+
+<p>I don’t think its necessary that you memorize all of the iOS API’s, but
+you should have a good idea of what is available to you, and be fluent
+in a few of the big ones.</p>
+
+<p><strong>UIKit</strong> (IUViewController, UITableView, UIButton,
+UINavigationController, GestureRecognizers)</p>
+
+<p><strong>Interface Builder</strong> (Storyboards, Segues, and the odd .xib)</p>
+
+<p><strong>Foundation Types</strong> (NSArray, NSDictionary, NSString) and their Swift
+counterparts (Array, Dictionary and String)</p>
+
+<p><strong>HTTP API</strong> (NSURLSession, Basic REST API concepts, JSON Parsing with
+NSJSONSerialization)</p>
+
+<p><strong>Grand Central Dispatch</strong> (GCD, NSOperationQueue)</p>
+
+<p><strong>Persistence</strong> (NSCoding, NSUserDefaults, CoreData)</p>
+
+<p><strong>Memory Management</strong> (what Retain Cycles are and ARC fundamentals)</p>
+
+<p>Third-Party frameworks can also fun, but try to not depend on them too
+much; if it’s something I can do myself, I usually do.</p>
+
+<h2 id="development-patterns">Development Patterns</h2>
+
+<p>Patterns are important, they make development easier and they make your
+code cleaner. Make sure you understand these basic patterns, they are
+used A LOT in the iOS Frameworks and it is not likely that you will be
+able to do much without knowing them. There are many more, but you can
+learn those as you go.</p>
+
+<p><strong>Delegation</strong> (This is sort of the workhorse of most iOS API’s, you
+should DEFINITELY understand this)</p>
+
+<p><strong>Model View Controller</strong> (MVC, I don’t think Apple did the best job of
+encouraging best MVC separation, but it’s an important pattern that can
+help improve your code if you take the time to implement it properly.
+Also, it’s pretty much guaranteed to be on any iOS interviewer’s
+question list.)</p>
+
+<p><strong>Subclassing or Object-Oriented Programming</strong> (The most part you will
+be writing apps in this style)</p>
+
+<p><strong>Singleton</strong> (This one can definitely be abused… use sparingly.)</p>
+
+<h2 id="familiarity-with-the-environment">Familiarity with the Environment</h2>
+
+<p>This might seem obvious, but if you don’t have a Mac, get one! If you
+don’t have an iOS device, get one! While it’s not impossible to get
+started just writing apps for the simulator, you will eventually want a
+real device for development. As for computer, it’s gonna be pretty hard
+to learn Xcode without a mac to run it on. I started out with a 2009
+MacBook Pro 13″ and a first-gen iPod Touch. It is quite possible to get
+by with the lower end devices to start, it was nearly a $1500
+investment, but totally worth it in the long run.</p>
+
+<h2 id="uxui">UX/UI</h2>
+
+<p>All mobile developers should at least know some of the basic concepts of
+design. You should know the difference between mockups and wireframes
+and how to use both in your development process. Knowing what Apple
+considers usable UI will help as well; for this you will definately want
+to read the <a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/">Apple Human Interface Guidelines</a></p>
+
+<h2 id="tools">Tools</h2>
+
+<p>You should be familiar with a few of the common development tools.</p>
+
+<p><strong>Xcode</strong> (of course)</p>
+
+<p><strong>Source Control</strong> (Git, Subversion or Mercurial… probably just git
+though)</p>
+
+<p><strong>Issue Tracking Software</strong> (JIRA is the big one here, but there are
+others. Just play with some of them if you can.)</p>
+
+<h2 id="opinions">Opinions</h2>
+
+<p>Having an opinion about iOS, Swift, or even a specific API is a great
+way for interviewers to understand how deep your knowledge about a topic
+goes. It also allows us to see your passion. If you are having an
+interview and you are asked, “So what do you think of Swift?” saying
+“It’s alright, I guess” is not the correct answer, you should tell them
+what you think of optionals, how you like using a specific feature.
+There aren’t many wrong answers here, the important thing is to have
+something to say.</p>
+
+<h2 id="portfolio">Portfolio</h2>
+
+<p>Actions can speak louder than words. If you really want to nail that
+interview, put together a couple of simple apps (or even better, launch
+them on the AppStore); they really like to see that you have the ability
+to complete a project. GitHub is nice too, but make sure your code is
+easy for the interviewers to compile if they wanna test it out.</p>
+
+<p>If you are wanting more resources to get started, please checkout my
+<a href="resources/">iOS Developer Resources</a> page where I link to blogs and pages I found helpful
+when I started out.</p>
+
+<p>I guess the last thing I would add is JUST DO IT! Right now iOS
+developers are in high demand and if you can get yourself to a decent
+skill level, you won’t be without work for a while. It’s a rewarding job
+that allows you to practice both engineering skills and creativity.</p>
+
+<p><a href="https://www.youtube.com/watch?v=ZXsQAXx_ao0"><img src="images/doit.jpg" alt="DO IT" /></a></p>
+
+<p><strong>Did I forget something?
+Let me know on <a href="https://twitter.com/westonhanners">Twitter (@WestonHanners)</a>. I want to make
+this my go-to resource for helping new developers start their career.</strong>
+by the way the company I work for is hiring iOS Developers of all skill
+levels, if you are interested, click this link to find out more
+<a href="http://www.ymedialabs.com/careers/">Y Media Labs Careers</a> Be sure to tell them I sent you ;)</p>
+
+</div>
+</article>
+<hr class="article-divider" />
+</section>
+
+<section class="content">
+<article>
+<h1 class="article-title"><a href=/blog/2015.11.10>Per-View Auto-Rotation Locking Made Easy for iOS 8 and 9</a></h2>
+
+<h4 class="date-line">Published on Nov 10th, 2015</h4>
+
+<div><p>This week I was working on an app where the client wanted to lock the
+app rotation to Portrait on some screens and Landscape on others.
+Luckily I had built all of my views in AutoLayout so they already
+supported the required layouts, I just needed to lock them. Rotation
+API’s are one of the most frequently deprecated parts of UIKit so when I
+started working on this, I had to look it up, and let me say, it’s
+pretty noisy out there. After an hour or so of research and another hour
+or two of experimentation, I finally boiled it down to two parts.</p>
+
+<p>Select ALL POSSIBLE interface orientations you plan to support in your Info.plist.</p>
+
+<p><img src="images/InterfaceOrientation.png" alt="Screenshot" /></p>
+
+<p>Then you <em>really</em> only have to implement one method.</p>
+
+<h2 id="swift-12">Swift 1.2</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>override func supportedInterfaceOrientations() -&gt; Int {
+    return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+}
+</code></pre></div></div>
+
+<h2 id="swift-20">Swift 2.0</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>override func supportedInterfaceOrientations() -&gt; UIInterfaceOrientationMask {
+    return UIInterfaceOrientationMask.Portrait
+}
+</code></pre></div></div>
+
+<p>Making sure to select Portrait or Landscape depending on what you want.
+This is probably one of the messiest API transitions I have seen
+recently and it took me a while to actually notice what I kept doing
+wrong in Swift 1.2. (that Int cast is ugly)</p>
+
+<p><a href="downloads/RotationTest.zip">Sample Code</a></p>
+
+</div>
+</article>
+<hr class="article-divider" />
+</section>
+
+<section class="content">
+<article>
+<h1 class="article-title"><a href=/blog/2015.10.29>If-Let Assignment Operator</a></h2>
+
+<h4 class="date-line">Published on Oct 29th, 2015</h4>
+
+<div><blockquote>
+  <p>This article was updated on 12/06/2017 to account for Swift 4</p>
+</blockquote>
+
+<p>How many times have you had to implement this pattern?</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if let value = someOptionalValue as? String {
+    self.value = value
+}
+</code></pre></div></div>
+
+<p>I use this all the time when parsing through JSON or implementing
+NSCoding and I think its a little over verbose for Swift, I felt sure
+there was a better way. <a href="http://nshipster.com/swift-operators/">NSHipster</a> mentions a logical OR assignment
+operator (||=) which would be perfect however, it doesn’t seem to be
+implemented for generics <em>(Please let me know if I am wrong here)</em>. I
+thought I would give it a try…</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>precedencegroup AssignmentPrecedence {
+    associativity: right
+}
+
+infix operator ?= : AssignmentPrecedence
+
+func ?=&lt;T&gt;(left: inout T, right: T?) {
+    if let value = right {
+        left = value
+    }
+}
+</code></pre></div></div>
+
+<p>It actually worked quite well, I was able to reduce the original code to
+this</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>self.value ?= someOptionalValue as? String
+</code></pre></div></div>
+
+<p>Might not be the biggest win, but when you have several of these
+assignments in a row, it saves a lot of code and makes it much more
+readable. One more thing… and I am still trying to figure out exactly
+what is going on here, but I ended up having to define a second function
+to assign to optionals. The only difference is the left parameter now is
+T?</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func ?=&lt;T&gt;(left: inout T?, right: T?) {
+    if let value = right {
+        left = value
+    }
+}
+
+var someOptionalString: String?
+
+someOptionalString ?= newValue // Will assign when newValue is not optional
+</code></pre></div></div>
+
+<p>If you are interested in seeing this in action, here is the <a href="downloads/if-let-operator.playground.zip">Playground</a></p>
+
+</div>
+</article>
+<hr class="article-divider" />
+</section>
+
+</div>
+<div class="pagination">
+
+
+<a href="test/page/2/">Newer</a>
+
+
+<a href="test/page/4/">Older</a>
+
+
+</div>
+<script type="text/javascript" async defer src="/js/navigation.min.js"></script>
+<script type="text/javascript" async defer src="/js/asyncyoutube.min.js"></script>
+
+<div class="footer">
+    [ ©2019 <a href="http://twitter.com/@WestonHanners">Weston Hanners</a> | <a href="https://alloc-init.com/feed">rss</a> ]
+</div>
+<!--Powered by Jekyll and Amazon Lightsail, Alloc Theme by Weston Hanners-->
+
+</body>
+</html>

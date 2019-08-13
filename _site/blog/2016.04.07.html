@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Made with Liquid -->
+<meta charset=""/>
+<base href="/"/>
+<title> UITableView Storyboard Design | alloc-init</title>
+
+
+<meta name="description" content="<p>Frequently I will come across some code for an iOS app that looks like
+this.</p>
+
+" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@westonhanners"/>
+<meta name="twitter:creator" content="@westonhanners"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content=" UITableView Storyboard Design |  alloc-init"/>
+<meta property="og:description" content="<p>Frequently I will come across some code for an iOS app that looks like
+this.</p>
+
+"/>
+<meta property="og:url" content="http://alloc-init.com//blog/2016.04.07"/>
+<meta property="og:site_name" content="alloc-init"/>
+<meta property="fb:admins" content="weston.hanners"/>
+<meta property="og:image" content="images/logo-v3-1000x1000.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="test/assets/css/main.css, " type="text/css"/>
+<link rel="icon" href="images/logo-v3-16x16.png" sizes="16x16" />
+<link rel="icon" href="images/logo-v3-32x32.png" sizes="32x32" />
+<link rel="icon" href="images/logo-v3-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="images/logo-v3-180x180.png" />
+</head>
+
+<body>
+<header class="header">
+  <div class="banner">
+	<a href="./">
+	...alloc] init];
+	</a>
+</div>
+<div class="navcontainer">
+<div id="topnav" class="navitems">
+<a href="./">[Home]</a>
+<a href="./about">[about me]</a>
+<a href="./resources">[resources]</a>
+<a href="./stuff">[stuff]</a>
+<a href="./posts">[posts]</a>
+<a href="https://twitter.com/WestonHanners">[Twitter]</a>
+<a href="https://github.com/WestonHanners">[Github]</a>
+</div>
+
+<div class="icon">
+	<a href="javascript:void(0);" onclick="toggleNav()">&#9776;</a>
+</div>
+
+</div>
+</header>
+<section class="content">
+  <article>
+  <h1 class="article-title">UITableView Storyboard Design</h1>
+  
+  <h4 class="date-line">Published on Apr 7th, 2016</h4>
+  
+  <p>Frequently I will come across some code for an iOS app that looks like
+this.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -&gt; UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("basicCell", forIndexPath: indexPath)
+        cell.textLabel?.text = "Some Test Data"
+        return cell
+    }
+
+    func numberOfSectionsInTableView(tableView: UITableView) -&gt; Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+        return 20
+    }
+}
+</code></pre></div></div>
+
+<p>And a storyboard that looks like this.</p>
+
+<p><img src="images/Screenshot-2016-04-06-22.38.37.png" alt="Screenshot 1" /></p>
+
+<p>Now, there is nothing <em>wrong </em>about this, a lot of Apple code
+demonstrates doing this exact thing. You insert a tableView where it is
+required, implement delegate and datasource protocols, drag connections
+in your storyboard and you are done, but we can do a lot better. Let’s
+begin by describing two of the big issues with this particular pattern.</p>
+
+<ul>
+  <li>This tableView is not reusable, you will have to rebuild it, along
+with it’s prototype cells in every screen that requires this data.</li>
+  <li>Your viewController will become polluted with code to handle taps,
+edits and actions for this tableView and will contribute to creating
+a “Massive View Controller”</li>
+</ul>
+
+<p>Xcode has given us the tools to improve this quite a bit right off the
+bat. If you look in the object browser in Xcode, you will find an object
+you are unlikely to have used before.</p>
+
+<p><img src="images/Screenshot-2016-04-06-22.33.15.png" alt="Screenshot 2" /></p>
+
+<p>This will allow you to embed a scene from your storyboard directly into
+another. Let’s see what this looks like. Start by deleting your old
+tableView then dragging out a UIContainerView and setting its
+constraints. You would want the container to be positioned in the exact
+spot you want your tableView to be. You will notice it created a new
+scene attached to it, it’s a generic UIViewController, go ahead and
+delete that for now. Drag a new UITableViewController out into your
+storyboard, we need to reconnect it to the container.</p>
+
+<p><img src="images/segueconnection.gif" alt="Segue Connection" /></p>
+
+<p>You now have a UITableViewController that can be used between multiple
+scenes in your storyboard. You just set the controller’s class, stick
+your delegate/datasource methods in and you are good to go. But we
+aren’t done yet, in Xcode 7, Apple gave us Storyboard references. By
+using references, you can embed this tableView in completely different
+storyboards. Start by dragging out one of these guys into your <em>other</em>
+storyboard</p>
+
+<p><img src="images/Screenshot-2016-04-06-22.34.23.png" alt="Screenshot 4" /></p>
+
+<p>Next you want to set its storyboard and identifier (I have my tableView
+scene from the above the identifier “tableViewController”, but you can
+make something more fitting for your app). The identifier here needs to
+match whatever you put in your tableView scene’s “Storyboard ID”.</p>
+
+<p><img src="images/Screenshot-2016-04-06-22.35.20.png" alt="Screenshot 5" /></p>
+
+<p>Now you can repeat the same steps as above to create and connect a
+UIContainerView to this new reference and <em>voila</em> you have embedded the
+tableView here as well. I hope this helps you improve your app structure
+and write less code. I was blown away when I found out how to do this.
+If you have any questions, poke me on twitter and I will try to help you
+out.</p>
+
+
+  </article>
+</section>
+<script type="text/javascript" async defer src="/js/navigation.min.js"></script>
+<script type="text/javascript" async defer src="/js/asyncyoutube.min.js"></script>
+
+<div class="footer">
+    [ ©2019 <a href="http://twitter.com/@WestonHanners">Weston Hanners</a> | <a href="https://alloc-init.com/feed">rss</a> ]
+</div>
+<!--Powered by Jekyll and Amazon Lightsail, Alloc Theme by Weston Hanners-->
+
+</body>
+</html>

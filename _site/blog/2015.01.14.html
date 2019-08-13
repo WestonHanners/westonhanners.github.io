@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Made with Liquid -->
+<meta charset=""/>
+<base href="/"/>
+<title> Remove that shadow! | alloc-init</title>
+
+
+<meta name="description" content="<p>UIKit can be so frustrating sometimes. I was trying to remove a shadow
+from UINavigationBar, and it turns out there is a property for doing this…</p>
+
+" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@westonhanners"/>
+<meta name="twitter:creator" content="@westonhanners"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content=" Remove that shadow! |  alloc-init"/>
+<meta property="og:description" content="<p>UIKit can be so frustrating sometimes. I was trying to remove a shadow
+from UINavigationBar, and it turns out there is a property for doing this…</p>
+
+"/>
+<meta property="og:url" content="http://alloc-init.com//blog/2015.01.14"/>
+<meta property="og:site_name" content="alloc-init"/>
+<meta property="fb:admins" content="weston.hanners"/>
+<meta property="og:image" content="images/logo-v3-1000x1000.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="test/assets/css/main.css, " type="text/css"/>
+<link rel="icon" href="images/logo-v3-16x16.png" sizes="16x16" />
+<link rel="icon" href="images/logo-v3-32x32.png" sizes="32x32" />
+<link rel="icon" href="images/logo-v3-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="images/logo-v3-180x180.png" />
+</head>
+
+<body>
+<header class="header">
+  <div class="banner">
+	<a href="./">
+	...alloc] init];
+	</a>
+</div>
+<div class="navcontainer">
+<div id="topnav" class="navitems">
+<a href="./">[Home]</a>
+<a href="./about">[about me]</a>
+<a href="./resources">[resources]</a>
+<a href="./stuff">[stuff]</a>
+<a href="./posts">[posts]</a>
+<a href="https://twitter.com/WestonHanners">[Twitter]</a>
+<a href="https://github.com/WestonHanners">[Github]</a>
+</div>
+
+<div class="icon">
+	<a href="javascript:void(0);" onclick="toggleNav()">&#9776;</a>
+</div>
+
+</div>
+</header>
+<section class="content">
+  <article>
+  <h1 class="article-title">Remove that shadow!</h1>
+  
+  <h4 class="date-line">Published on Jan 14th, 2015</h4>
+  
+  <p>UIKit can be so frustrating sometimes. I was trying to remove a shadow
+from UINavigationBar, and it turns out there is a property for doing this…</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>navigationBar.shadow = &amp;lt;something&amp;gt;
+</code></pre></div></div>
+
+<p>Perfect! or not… Apparently, it only works if
+you have a custom image as your bar background</p>
+
+<blockquote>
+  <p>The default value is nil, which corresponds to the
+default shadow image. When non-nil, this property
+represents a custom shadow image to show instead of the default. For a
+custom shadow image to be shown, a custom background image must also
+be set with
+the setBackgroundImage:forBarMetrics: method. If the
+default background image is used, then the default shadow image will
+be used regardless of the value of this property.</p>
+</blockquote>
+
+<p>So, I cannot use a solid colored background without a shadow… after
+looking around online, I found bunch of extensions on UIImage that
+returns an image of a given size and color, but I felt that custom
+drawing was a little overkill here. My solution is as follows:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extension UINavigationBar {
+    
+    func removeShadow() {
+        if let view = removeShadowFromView(self) {
+            view.hidden = true
+        }
+    }
+    
+    func removeShadowFromView(view: UIView) -&gt; UIImageView? {
+        if (view.isKindOfClass(UIImageView) &amp;&amp; view.bounds.size.height &lt;= 1) {
+            return view as? UIImageView
+        }
+        for subView in view.subviews {
+            if let imageView = removeShadowFromView(subView as UIView) {
+                return imageView
+            }
+        }
+        return nil
+    }   
+}
+</code></pre></div></div>
+
+<p>This way, I simply call</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>navigationController?.navigationBar.removeShadow()
+</code></pre></div></div>
+
+<p><img src="images/noshadow.png" alt="No Shadow" /></p>
+
+<p>and all is right with the world. Feel free to use this extension in your
+own work, it’s nothing particularly genius, but it sure helps me out.
+This is based on some Objective-C code I found <a href="http://stackoverflow.com/a/19227158/713940">here</a></p>
+
+<p><strong>Update for iOS 10:</strong> I changed the above code so it “hides” the shadow, rather than
+removing it. This is confirmed working on both iOS 9 and 10. The
+removeFromSuperview() method doesn’t work on iOS 10.</p>
+
+
+  </article>
+</section>
+<script type="text/javascript" async defer src="/js/navigation.min.js"></script>
+<script type="text/javascript" async defer src="/js/asyncyoutube.min.js"></script>
+
+<div class="footer">
+    [ ©2019 <a href="http://twitter.com/@WestonHanners">Weston Hanners</a> | <a href="https://alloc-init.com/feed">rss</a> ]
+</div>
+<!--Powered by Jekyll and Amazon Lightsail, Alloc Theme by Weston Hanners-->
+
+</body>
+</html>

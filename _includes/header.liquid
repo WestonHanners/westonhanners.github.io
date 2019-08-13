@@ -1,0 +1,27 @@
+<head>
+<!-- Made with Liquid -->
+<meta charset="{{ config.charset }}"/>
+<base href="{{ base_url }}/"/>
+<title>{% if page.title != site.title %} {{ page.title }} |{% endif %} {{ site.title }}</title>
+
+{% if page.excerpt %}
+<meta name="description" content="{{ page.excerpt }}" />
+{% endif %}
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@westonhanners"/>
+<meta name="twitter:creator" content="@westonhanners"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="{% if page.title %} {{ page.title }} | {% endif %} {{ site.title }}"/>
+<meta property="og:description" content="{{ page.excerpt }}"/>
+<meta property="og:url" content="{{ site.url }}/{{ page.url }}"/>
+<meta property="og:site_name" content="{{ site.title }}"/>
+<meta property="fb:admins" content="weston.hanners"/>
+<meta property="og:image" content="images/logo-v3-1000x1000.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="{{ "/assets/css/main.css, " | prepend: site.baseurl }}" type="text/css"/>
+<link rel="icon" href="images/logo-v3-16x16.png" sizes="16x16" />
+<link rel="icon" href="images/logo-v3-32x32.png" sizes="32x32" />
+<link rel="icon" href="images/logo-v3-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="images/logo-v3-180x180.png" />
+</head>
