@@ -1,0 +1,10 @@
+<section class="content">
+<article>
+<h1 class="article-title"><a href={{ post.url }}>{{ post.title }}</a></h2>
+{% if post.date %}
+<h4 class="date-line">Published on {{ post.date | date_to_string: "ordinal", "US" }}</h4>
+{% endif %}
+<div>{{ post.content }}</div>
+</article>
+<hr class="article-divider" />
+</section>

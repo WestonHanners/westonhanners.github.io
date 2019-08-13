@@ -1,2 +1,2 @@
 #!/bin/bash
-sass -c themes/alloc/sass/styles.sass themes/alloc/css/css.css --style compressed
+bundle exec jekyll build -d ../alloc --verbose

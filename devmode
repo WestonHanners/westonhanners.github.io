@@ -1,2 +1,2 @@
 #!/bin/bash
-sass -c --watch themes/alloc/sass/styles.sass themes/alloc/css/css.css --style compressed
+bundle jekyll serve --watch --verbose

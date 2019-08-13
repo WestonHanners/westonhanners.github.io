@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include header.liquid %}
+<body>
+<header class="header">
+{% include banner.liquid %}
+</header>
+<div class="article-list">
+{% for post in paginator.posts %}
+{% include article.liquid post=post %}
+{% endfor %}
+</div>
+<div class="pagination">
+{% if paginator.total_pages > 1 %}
+{% if paginator.previous_page %}
+<a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">newer</a>
+{% endif %}
+{% if paginator.next_page %}
+<a href="{{ paginator.next_page_path | prepend: site.baseurl }}">older</a>
+{% endif %}
+{% endif %}
+</div>
+{% include footer.liquid %}
+</body>
+</html>
