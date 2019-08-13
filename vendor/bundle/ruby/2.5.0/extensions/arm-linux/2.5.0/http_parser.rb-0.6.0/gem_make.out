@@ -1,0 +1,21 @@
+current directory: /home/pi/site/vendor/bundle/ruby/2.5.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+/usr/bin/ruby2.5 -r ./siteconf20190812-19138-13n6sty.rb extconf.rb
+creating Makefile
+
+current directory: /home/pi/site/vendor/bundle/ruby/2.5.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+make "DESTDIR=" clean
+
+current directory: /home/pi/site/vendor/bundle/ruby/2.5.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+make "DESTDIR="
+compiling ruby_http_parser.c
+ruby_http_parser.c: In function ‘Parser_execute’:
+ruby_http_parser.c:330:71: warning: format ‘%zu’ expects argument of type ‘size_t’, but argument 4 has type ‘long int’ [-Wformat=]
+       rb_raise(eParserError, "Could not parse data entirely (%zu != %zu)", nparsed, len);
+                                                                     ~~^             ~~~
+                                                                     %lu
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.so
+
+current directory: /home/pi/site/vendor/bundle/ruby/2.5.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20190812-19138-1wtqp7l
