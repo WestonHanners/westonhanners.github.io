@@ -1,2 +1,0 @@
-#!/bin/bash
-bundle jekyll serve --watch --verbose
