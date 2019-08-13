@@ -27,6 +27,12 @@ plugins:
   - jekyll-feed
   - jekyll-paginate-v2
 
+author:
+  twitter: westonhanners
+  
+feed:
+  path: feed
+
 exclude: 
   - devmode
   - prepare
