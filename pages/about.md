@@ -1,6 +1,7 @@
 ---
 title: about me
 layout: info
+permalink: about
 ---
 
 ![Picture of Weston][1]

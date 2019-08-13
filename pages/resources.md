@@ -2,6 +2,7 @@
 title: Resources
 layout: page
 date: 2019-08-10
+permalink: resources
 ---
 
 This is my curated list of iOS related programming resources. I will try
