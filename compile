@@ -1,2 +1,2 @@
 #!/bin/bash
-bundle exec jekyll build -d ../deploy --verbose
+bundle exec jekyll build -d ../alloc --verbose
