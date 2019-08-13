@@ -5,15 +5,15 @@
 <title>{% if page.title != site.title %} {{ page.title }} |{% endif %} {{ site.title }}</title>
 
 {% if page.excerpt %}
-<meta name="description" content="{{ page.excerpt }}" />
+<meta name="description" content="{{ page.excerpt | strip_html }}" />
 {% endif %}
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@westonhanners"/>
 <meta name="twitter:creator" content="@westonhanners"/>
 <meta property="og:type" content="article"/>
-<meta property="og:title" content="{% if page.title %} {{ page.title }} | {% endif %} {{ site.title }}"/>
-<meta property="og:description" content="{{ page.excerpt }}"/>
+<meta property="og:title" content="{% if page.title %} {{ page.title }} | {% endif %}{{ site.title }}"/>
+<meta property="og:description" content="{{ page.excerpt | strip_html }}"/>
 <meta property="og:url" content="{{ site.url }}/{{ page.url }}"/>
 <meta property="og:site_name" content="{{ site.title }}"/>
 <meta property="fb:admins" content="weston.hanners"/>
