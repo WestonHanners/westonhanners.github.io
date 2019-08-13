@@ -28,8 +28,9 @@ plugins:
   - jekyll-paginate-v2
 
 author:
-  twitter: westonhanners
-  
+  picture: images/me.jpeg
+  twitter: WestonHanners
+
 feed:
   path: feed
 
