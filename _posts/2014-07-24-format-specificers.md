@@ -1,6 +1,6 @@
 ---
 title: Format specifiers for NSInteger and NSUInteger (Without Warnings)
-date: 2014/07/24
+date: 2014-07-24
 layout: post
 ---
 

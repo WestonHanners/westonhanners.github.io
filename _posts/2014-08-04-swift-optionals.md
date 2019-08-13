@@ -1,6 +1,6 @@
 ---
 title: How I Finally Understood Swift Optionals
-date: 2014/08/04
+date: 2014-08-04
 layout: post
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Easy, Automatic Server Mocking for iOS Testing
-date: 2016/06/27
+date: 2016-06-27
 layout: post
 ---
 

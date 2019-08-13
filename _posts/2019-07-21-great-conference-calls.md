@@ -1,6 +1,6 @@
 ---
 title: Tips for Great Conference Calls
-date: 2019/07/21
+date: 2019-07-21
 layout: post
 ---
 

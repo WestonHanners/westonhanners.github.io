@@ -1,7 +1,7 @@
 ---
 title: NSCoding class chaining with Swift
-date: 2015/08/24
-layout: page
+date: 2015-08-24
+layout: post
 ---
 
 While I was trying to get some Swift classes to conform to

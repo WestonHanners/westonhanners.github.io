@@ -1,6 +1,6 @@
 ---
 title: The Trap of Libraries
-date: 2017/12/17
+date: 2017-12-17
 layout: post
 ---
 
