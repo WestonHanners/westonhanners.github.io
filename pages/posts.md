@@ -1,5 +1,5 @@
 ---
 title: posts
 layout: allposts
-permalink: all
+permalink: posts
 ---
