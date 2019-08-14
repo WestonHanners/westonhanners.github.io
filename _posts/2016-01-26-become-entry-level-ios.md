@@ -175,5 +175,5 @@ levels, if you are interested, click this link to find out more
 [5]: resources/
 [6]: https://twitter.com/westonhanners
 [7]: http://www.ymedialabs.com/careers/
-[8]: images/doit.jpg
+[8]: http://img.youtube.com/vi/ZXsQAXx_ao0/0.jpg
 [9]: https://www.youtube.com/watch?v=ZXsQAXx_ao0
