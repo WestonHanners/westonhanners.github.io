@@ -11,7 +11,13 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@westonhanners"/>
 <meta name="twitter:creator" content="@westonhanners"/>
+
+{% if page.collection == post %}
+<meta property="og:type" content="website"/>
+{% else %}
 <meta property="og:type" content="article"/>
+{% endif %}
+
 <meta property="og:title" content="{{ page.title }}"/>
 <meta property="og:description" content="{{ page.excerpt | strip_html }}"/>
 <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>

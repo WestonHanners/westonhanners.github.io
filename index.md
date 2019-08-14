@@ -4,6 +4,7 @@
 
 title: alloc-init
 layout: home
+description: Blog for @WestonHanners
 pagination: 
   enabled: true
 ---
