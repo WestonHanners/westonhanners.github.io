@@ -1,4 +1,0 @@
-<!--
-Title: Posts
-Template: allposts
--->
