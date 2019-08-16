@@ -28,7 +28,7 @@ plugins:
   - jekyll-paginate-v2
 
 author:
-  picture: images/me.jpeg
+  picture: /images/me.jpeg
   twitter: WestonHanners
 
 feed:
@@ -58,5 +58,3 @@ collections:
 sass:
   sass_dir: _sass   
   style: compressed
-
-include: [_root]
