@@ -89,4 +89,4 @@ Storyboard loading in Xcode is really slow... enough said.
 I am greatly looking forward to using Swift UI, this framework is going to fix pretty
 much all of my complaints
 
-[1]: images/storyboard-diff.png
+[1]: /images/storyboard-diff.png

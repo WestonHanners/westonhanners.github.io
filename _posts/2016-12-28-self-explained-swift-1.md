@@ -208,4 +208,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 [Download This Playground][1]
 
-[1]: downloads/1-Layout.zip
+[1]: /downloads/1-Layout.zip

@@ -42,5 +42,5 @@ wrong in Swift 1.2. (that Int cast is ugly)
 
 [Sample Code][2]
 
-[1]: images/InterfaceOrientation.png
-[2]: downloads/RotationTest.zip
+[1]: /images/InterfaceOrientation.png
+[2]: /downloads/RotationTest.zip

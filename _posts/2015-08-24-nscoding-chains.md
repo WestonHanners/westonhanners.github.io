@@ -72,4 +72,4 @@ print(person.position)
 
 > This has been tested with Swift 1.2
 
-[1]: downloads/NSCoding-Playground.zip
+[1]: /downloads/NSCoding-Playground.zip

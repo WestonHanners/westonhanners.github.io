@@ -27,6 +27,6 @@ make sure I hadn't overlooked something, and I had not. So I filed a bug
 report with Apple and hopefully this will get cleared up soonish. In the
 mean time I decided to make this blog post, to help Google, help others.
 
-[1]: images/Screenshot-2014-07-24-11.38.46.png
+[1]: /images/Screenshot-2014-07-24-11.38.46.png
 [2]: https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Strings/Articles/formatSpecifiers.html
 [3]: https://twitter.com/gparker/status/377910611453046784

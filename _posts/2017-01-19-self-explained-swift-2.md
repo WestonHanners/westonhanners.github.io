@@ -182,5 +182,5 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 
 Check out the previous post: [Self-Explained Swift #1][2]
 
-[1]: downloads/2-LayoutImproved.zip
+[1]: /downloads/2-LayoutImproved.zip
 [2]: blog/2016.12.28

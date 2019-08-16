@@ -97,8 +97,8 @@ since your requests are not likely to differ between runs. ...and that's
 it. I hope you find this useful, and if you have any questions, feel
 free to poke me on [twitter][5].
 
-[1]: images/Screenshot-2016-06-24-20.25.03.png
-[2]: images/Screenshot-2016-06-24-20.26.41.png
+[1]: /images/Screenshot-2016-06-24-20.25.03.png
+[2]: /images/Screenshot-2016-06-24-20.26.41.png
 [3]: https://github.com/ADVTOOLS/ADVTrustStore.git
 [4]: https://mitmproxy.org
 [5]: https://twitter.com/@westonhanners

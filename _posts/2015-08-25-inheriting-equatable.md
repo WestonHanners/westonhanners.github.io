@@ -98,4 +98,4 @@ class Employee: Person {
 **UPDATE 11/6/2015:** Creating an isEqual function on NSObject subclasses was causing issues, changing to
 equalTo() fixes this.
 
-[1]: downloads/Equatable.playground.zip
+[1]: /downloads/Equatable.playground.zip

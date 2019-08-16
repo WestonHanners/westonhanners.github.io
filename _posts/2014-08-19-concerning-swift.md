@@ -33,4 +33,4 @@ a bit more Swift-like.
 
 [1]: https://ericasadun.com/2014/08/11/swift-what-does-1-0-mean/
 [2]: https://github.com/ksm/SwiftInFlux
-[3]: images/Swift-no-Banner.png
+[3]: /images/Swift-no-Banner.png

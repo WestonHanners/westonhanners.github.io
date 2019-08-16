@@ -67,5 +67,5 @@ This is based on some Objective-C code I found [here][2]
 removing it. This is confirmed working on both iOS 9 and 10. The
 removeFromSuperview() method doesn't work on iOS 10.
 
-[1]: images/noshadow.png
+[1]: /images/noshadow.png
 [2]: http://stackoverflow.com/a/19227158/713940

@@ -22,5 +22,5 @@ like me along their journey.
 - [youtube](https://www.youtube.com/kronusdark)
 - [linkedin](https://www.linkedin.com/in/lhanners)
 
-[1]: images/me.jpeg#clip-circle
+[1]: /images/me.jpeg#clip-circle
 [2]: https://www.ymedialabs.com 

@@ -83,8 +83,8 @@ and write less code. I was blown away when I found out how to do this.
 If you have any questions, poke me on twitter and I will try to help you
 out.
 
-[1]: images/Screenshot-2016-04-06-22.38.37.png
-[2]: images/Screenshot-2016-04-06-22.33.15.png
-[3]: images/segueconnection.gif
-[4]: images/Screenshot-2016-04-06-22.34.23.png
-[5]: images/Screenshot-2016-04-06-22.35.20.png
+[1]: /images/Screenshot-2016-04-06-22.38.37.png
+[2]: /images/Screenshot-2016-04-06-22.33.15.png
+[3]: /images/segueconnection.gif
+[4]: /images/Screenshot-2016-04-06-22.34.23.png
+[5]: /images/Screenshot-2016-04-06-22.35.20.png

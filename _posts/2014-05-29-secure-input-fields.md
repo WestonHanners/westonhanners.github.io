@@ -18,4 +18,4 @@ How often do people typo on a touchscreen keyboard? Unfortunately, I have as of 
 
 I realize that this may sound nuts, and I would love to hear a rebuttal. Please, if you have an argument message me on Twitter.
 
-[1]: images/20140529-221714-80234108.jpg
+[1]: /images/20140529-221714-80234108.jpg

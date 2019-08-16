@@ -64,4 +64,4 @@ someOptionalString ?= newValue // Will assign when newValue is not optional
 If you are interested in seeing this in action, here is the [Playground][2]
 
 [1]: http://nshipster.com/swift-operators/
-[2]: downloads/if-let-operator.playground.zip
+[2]: /downloads/if-let-operator.playground.zip
