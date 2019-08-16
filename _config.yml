@@ -16,8 +16,8 @@
 title: alloc-init
 description: blog for @WestonHanners
 email: admin@alloc-init.com
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://alloc-init.com" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: ""
+url: "https://alloc-init.com"
 twitter_username: WestonHanners
 github_username:  westonhanners
 encoding: utf-8
@@ -35,9 +35,6 @@ feed:
   path: feed
 
 exclude: 
-  - devmode
-  - prepare
-  - compile
   - vendor
   - README.md
   - Gemfile*
@@ -53,9 +50,11 @@ pagination:
     before: 2
     after: 2
 
+collections:
+  posts:
+    permalink: /blog/:year.:month.:day
+    output: true
+
 sass:
   sass_dir: _sass   
   style: compressed
-
-
-permalink: /blog/:year.:month.:day
