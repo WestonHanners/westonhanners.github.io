@@ -2,32 +2,46 @@
 <!-- Made with Liquid -->
 <meta charset="utf-8"/>
 <base href="{{ base_url }}/"/>
-<title>{% if page.title != site.title %} {{ page.title }} |{% endif %} {{ site.title }}</title>
+
+{% capture rendered_title %}
+{% if page.title != site.title %} {{ page.title }} |{% endif %} {{ site.title }}
+{% endcapture %}
+
+<title>{{ rendered_title }}</title>
 
 {% if page.excerpt %}
 <meta name="description" content="{{ page.excerpt | strip_html }}" />
 {% endif %}
 
+<!-- Google / Search Engine Tags -->
+<meta itemprop="name" content="alloc-init" />
+<meta itemprop="description" content="Blog for @WestonHanners" />
+<meta itemprop="image" content="{{ site.url }}/images/logo-v3-large.png" />
+
+<!-- Twitter -->
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@westonhanners"/>
-<meta name="twitter:creator" content="@westonhanners"/>
+<meta name="twitter:site" content="@westonhanners" />
+<meta name="twitter:creator" content="@westonhanners" />
+<meta name="twitter:image" content="{{ site.url }}/images/logo-v3-large.png" />
 
+<!-- OpenGraph -->
 {% if page.collection == post %}
-<meta property="og:type" content="website"/>
-<meta property="og:description" content="{{ page.description }}"/>
+<meta property="og:type" content="website" />
+<meta property="og:description" content="{{ page.description }}" />
 {% else %}
-<meta property="og:type" content="article"/>
-<meta property="og:description" content="{{ page.excerpt | strip_html }}"/>
+<meta property="og:type" content="article" />
+<meta property="og:description" content="{{ page.excerpt | strip_html }}" />
 {% endif %}
-
-<meta property="og:title" content="{{ page.title }}"/>
-<meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
-<meta property="og:site_name" content="{{ site.title }}"/>
+<meta property="og:title" content="{{ page.title }}" />
+<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+<meta property="og:site_name" content="{{ site.title }}" />
 <meta property="og:image" content="{{ site.url }}/images/logo-v3-large.png" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="assets/styles.css" type="text/css"/>
+
+<!-- Icons -->
+<link rel="stylesheet" href="assets/styles.css" type="text/css" />
 <link rel="icon" href="images/logo-v3-16x16.png" sizes="16x16" />
 <link rel="icon" href="images/logo-v3-32x32.png" sizes="32x32" />
 <link rel="icon" href="images/logo-v3-192x192.png" sizes="192x192" />
-<link rel="apple-touch-icon-precomposed" href="images/logo-v3-180x180.png" />
+<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-180x180.png" />
 </head>
