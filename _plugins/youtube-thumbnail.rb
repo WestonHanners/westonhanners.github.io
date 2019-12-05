@@ -2,11 +2,13 @@
 
 module Jekyll
     Jekyll::Hooks.register :posts, :post_render do |post|
-        print(post)
-        post.content.gsub("(?=<p><a href=\"https:\/\/www\.youtube\.com\/watch\?v=).*(?:<\/p>)") do |match|
-            alt = match.match("(?<=\">).+(?=<\/a>)")
+        post.content.gsub((?=<p><a href=\"https:\/\/www\.youtube\.com\/watch\?v=).*(?:<\/p>)) do |match|
+            print(post)
+
+            altText = match.match("(?<=\">).+(?=<\/a>)")
             videoID = match.match("(?<=\?v=)(.*)(?=\">)")
-            return "<p><a href=\"https://www.youtube.com/watch?v=#{videoID}\"><img src=\"http://img.youtube.com/vi/#{videoID}/0.jpg\" alt=\"#{alt}\" /></a></p>"
+
+            "<p><a href=\"https://www.youtube.com/watch?v=#{videoID}\"><img src=\"http://img.youtube.com/vi/#{videoID}/0.jpg\" alt=\"#{altText}\" /></a></p>"
         end
     end
 end
