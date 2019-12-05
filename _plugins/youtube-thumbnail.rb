@@ -2,7 +2,9 @@
 
 module Jekyll
     Jekyll::Hooks.register :posts, :post_render do |post|
+        
         newOutput = post.output.gsub(/(?=<p><a href=\"https:\/\/www\.youtube\.com\/watch\?v=).*(?:<\/p>)/) { |match|
+
             altText = match.match(/(?<=\">).+(?=<\/a>)/)
             videoID = match.match(/(?<=\?v=)(.*)(?=\">)/)
 
