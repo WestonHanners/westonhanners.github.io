@@ -1,5 +1,5 @@
 ---
-title: Fractal MVC: A Flexible iOS Architecture
+title: Fractal MVC - A Flexible iOS Architecture
 date: 2018-09-04
 layout: post
 ---
