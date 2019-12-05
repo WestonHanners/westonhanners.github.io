@@ -11,7 +11,8 @@ module Jekyll
             output = "<p><a href=\"https://www.youtube.com/watch?v=#{videoID}\"><img src=\"http://img.youtube.com/vi/#{videoID}/0.jpg\" alt=\"#{altText}\" /></a></p>"
 
             print(output)
-            return output
+            
+            output
         }
     end
 end
