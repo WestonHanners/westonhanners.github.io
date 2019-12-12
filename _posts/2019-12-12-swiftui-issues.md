@@ -1,6 +1,6 @@
 ---
 title: Some reasons SwiftUI might not be right for you
-date: 2019-12-11
+date: 2019-12-12
 layout: post
 ---
 
@@ -117,3 +117,5 @@ screens super quick and opens the door to a ton of prototyping.
 I am sure these will all be fixed in time, but many of these are deal-breakers
 and as it is right now, I will not recommend SwiftUI for any paid projects I 
 am involved with. 
+
+> This article will be updated as I find more issues.
