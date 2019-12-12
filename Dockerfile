@@ -2,4 +2,4 @@ FROM jekyll/jekyll:latest
 
 COPY . /srv/jekyll
 
-CMD ["jekyll", "serve", "--verbose"]
+CMD ["jekyll", "serve", "--drafts", "--verbose"]
