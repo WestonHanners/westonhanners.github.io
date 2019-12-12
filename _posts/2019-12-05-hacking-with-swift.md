@@ -9,6 +9,7 @@ in to the very depths of SwiftUI. Along with his [book][3], he has also been
 churning out and an ever growing series of videos.
 
 [![Hacking with iOS: SwiftUI Edition][4]][2]
+{: .youtube-video}
 
 This series starts from the basics and moves into helping you understand a lot
 of how the framework works under the hood.
