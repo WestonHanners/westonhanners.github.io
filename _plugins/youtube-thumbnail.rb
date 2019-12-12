@@ -8,7 +8,7 @@ module Jekyll
             altText = match.match(/(?<=\">).+(?=<\/a>)/)
             videoID = match.match(/(?<=\?v=)(.*)(?=\">)/)
 
-            "<p><a href=\"https://www.youtube.com/watch?v=#{videoID}\"><img src=\"https://img.youtube.com/vi/#{videoID}/0.jpg\" alt=\"#{altText}\" /></a></p>"            
+            "<p class=\"youtube-video\"><a href=\"https://www.youtube.com/watch?v=#{videoID}\"><img src=\"https://img.youtube.com/vi/#{videoID}/0.jpg\" alt=\"#{altText}\/\" /></a></p>"            
         }
 
         post.output = newOutput

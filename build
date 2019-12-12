@@ -1,0 +1,2 @@
+docker build -t alloc .
+docker run -p 80:4000 -t alloc:latest
