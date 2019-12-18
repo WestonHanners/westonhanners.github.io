@@ -1,0 +1,51 @@
+.navcontainer
+    display: flex
+    margin: 0
+    padding: 0
+    overflow: hidden
+    justify-content: center
+    align-items: baseline
+
+.navitems
+    display: flex
+    flex-flow: row nowrap
+    justify-content: center
+    font-size: 1rem
+
+.navitems a, .pagination a
+    text-align: center
+    padding: 0.8rem 1rem
+    color: var(--nav-link-color)
+    font-weight: bold
+    font-family: Hack, monospace
+    text-decoration: none
+    text-transform: lowercase
+
+.icon
+    display: none
+
+@media screen and (max-width:800px)
+
+    /* Navigation Bar Collapse */
+
+    .icon
+        display: inline
+        padding: 1rem 1rem
+        font-size: 1.5rem
+
+    .navcontainer
+        justify-content: space-between
+
+    .navitems
+        flex-flow: column nowrap
+        justify-content: left  
+        font-size: 1.5rem
+
+    .navitems a
+        text-align: left
+
+    .navitems a:not(:first-child)
+        display: none
+
+    .navitems.responsive a
+        display: inline
