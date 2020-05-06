@@ -7,8 +7,10 @@ tags: [banner]
 
 ![Picture of Weston][1]
 
-My name is Weston Hanners and I am a Mobile Software Craftsman 
+My name is Weston Hanners and I am a Mobile Software Craftsman, Servant Leader
 for [Y Media Labs][2] in Downtown Indianapolis.
+
+I specialize in User Interfaces, UX, Accessibility and Design in iOS.
 
 I have been working with Objective-C since 2010 and Swift since 2014.
 Since then I have had the pleasure of working with many great developers and
