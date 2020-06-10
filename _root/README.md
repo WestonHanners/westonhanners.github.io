@@ -10,16 +10,15 @@ Extract this package in the root of your web site. If your site is <code>http://
 
 Insert the following code in the `head` section of your pages:
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=yyQxaYyA5Y">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=yyQxaYyA5Y">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=yyQxaYyA5Y">
-    <link rel="manifest" href="/site.webmanifest?v=yyQxaYyA5Y">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=yyQxaYyA5Y" color="#474747">
-    <link rel="shortcut icon" href="/favicon.ico?v=yyQxaYyA5Y">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=QEGKkvzbjB">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=QEGKkvzbjB">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=QEGKkvzbjB">
+    <link rel="manifest" href="/site.webmanifest?v=QEGKkvzbjB">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=QEGKkvzbjB" color="#2f2f2f">
+    <link rel="shortcut icon" href="/favicon.ico?v=QEGKkvzbjB">
     <meta name="apple-mobile-web-app-title" content="alloc-init">
     <meta name="application-name" content="alloc-init">
-    <meta name="msapplication-TileColor" content="#303030">
-    <meta name="msapplication-TileImage" content="/mstile-144x144.png?v=yyQxaYyA5Y">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#2f2f2f">
+    <meta name="theme-color" content="#2f2f2f">
 
 *Optional* - Check your favicon with the [favicon checker](https://realfavicongenerator.net/favicon_checker)
