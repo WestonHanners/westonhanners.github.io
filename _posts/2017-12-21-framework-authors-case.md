@@ -8,7 +8,6 @@ I was looking at my YouTube subscription feed this morning, and this gem popped
 up. While I don't agree with his prejudice against native apps, I think Adrian 
 adds a few more points to go well with [yesterday's blog post][1].
 
-[Watch Video][2]
+{% include youtube-video.liquid id="VvOsegaN9Wk" alt="Watch Video" %}
 
 [1]: blog/2017.12.18
-[2]: https://www.youtube.com/watch?v=VvOsegaN9Wk

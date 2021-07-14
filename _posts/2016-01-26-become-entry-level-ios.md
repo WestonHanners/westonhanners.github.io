@@ -159,7 +159,7 @@ developers are in high demand and if you can get yourself to a decent
 skill level, you won’t be without work for a while. It’s a rewarding job
 that allows you to practice both engineering skills and creativity.
 
-[DO IT][8]
+{% include youtube-video.liquid id="ZXsQAXx_ao0" alt="DO IT" %}
 
 **Did I forget something?
 Let me know on [Twitter (@WestonHanners)][6]. I want to make
@@ -175,4 +175,3 @@ levels, if you are interested, click this link to find out more
 [5]: resources/
 [6]: https://twitter.com/westonhanners
 [7]: http://www.ymedialabs.com/careers/
-[8]: https://www.youtube.com/watch?v=ZXsQAXx_ao0

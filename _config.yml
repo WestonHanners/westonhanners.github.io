@@ -22,7 +22,7 @@ twitter_username: WestonHanners
 github_username:  westonhanners
 encoding: utf-8
 paginate: 5
-paginate_path: "page/:num/"
+paginate_path: "/page/:num/"
 
 # Build settings
 markdown: kramdown
