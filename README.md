@@ -27,7 +27,6 @@ Content Management System by [Jekyll](1)
 - **Jekyll**
 - **Ruby**
 - **Bundler**
-- **Apache**
 
 See Gemfile for more details
 
