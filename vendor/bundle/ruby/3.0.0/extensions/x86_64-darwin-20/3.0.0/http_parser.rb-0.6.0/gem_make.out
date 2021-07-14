@@ -1,0 +1,16 @@
+current directory: /Users/weston/Developer/alloc-init/vendor/bundle/ruby/3.0.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+/usr/local/opt/ruby/bin/ruby -I /usr/local/Cellar/ruby/3.0.0_1/lib/ruby/3.0.0 -r ./siteconf20210714-35746-3p8lkm.rb extconf.rb
+creating Makefile
+
+current directory: /Users/weston/Developer/alloc-init/vendor/bundle/ruby/3.0.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+make "DESTDIR=" clean
+
+current directory: /Users/weston/Developer/alloc-init/vendor/bundle/ruby/3.0.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+make "DESTDIR="
+compiling ruby_http_parser.c
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.bundle
+
+current directory: /Users/weston/Developer/alloc-init/vendor/bundle/ruby/3.0.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 ruby_http_parser.bundle ./.gem.20210714-35746-u054ap
