@@ -23,6 +23,7 @@ github_username:  westonhanners
 encoding: utf-8
 paginate: 5
 paginate_path: "/page/:num/"
+include: [_root]
 
 # Build settings
 markdown: kramdown
