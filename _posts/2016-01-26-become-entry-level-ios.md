@@ -159,7 +159,7 @@ developers are in high demand and if you can get yourself to a decent
 skill level, you won’t be without work for a while. It’s a rewarding job
 that allows you to practice both engineering skills and creativity.
 
-{% include youtube-video.liquid id="ZXsQAXx_ao0" alt="DO IT" %}
+{% include ytv.liquid id="ZXsQAXx_ao0" alt="DO IT" %}
 
 **Did I forget something?
 Let me know on [Twitter (@WestonHanners)][6]. I want to make
