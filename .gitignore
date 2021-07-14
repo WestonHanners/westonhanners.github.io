@@ -9,3 +9,5 @@ css.css.map
 .sass-cache
 _site
 .DS_Store
+vendor/*
+.jekyll-cache/*
