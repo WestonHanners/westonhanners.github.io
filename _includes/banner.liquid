@@ -1,20 +1,20 @@
 <div class="banner">
-	<a href="./">
+	<a aria-label="alloc init" href="./">
 	...alloc] init];
 	</a>
 </div>
 <div class="navcontainer">
 <div id="topnav" class="navitems">
-<a href="./">[Home]</a>
+<a aria-label="home" href="./">[Home]</a>
 {% for page in site.pages | sort 'title' %}
 {% if page.tags contains 'banner' %}
-<a href="{{ page.url }}">[{{ page.title }}]</a>
+<a aria-label="{{ page.title }}" href="{{ page.url }}">[{{ page.title }}]</a>
 {% endif %} 
 {% endfor %}
-<a href="https://twitter.com/WestonHanners">[Twitter]</a>
-<a href="https://github.com/WestonHanners">[Github]</a>
+<a aria-label="Twitter" href="https://twitter.com/WestonHanners">[Twitter]</a>
+<a aria-label="Github" href="https://github.com/WestonHanners">[Github]</a>
 </div>
 
-<button class="icon" aria-label= "Toggle Menu" onclick="toggleNav()">&#9776;</button>
+<button class="icon" aria-label="Toggle Menu" onclick="toggleNav()">&#9776;</button>
 
 </div>

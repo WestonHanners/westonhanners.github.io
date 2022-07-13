@@ -1,5 +1,5 @@
 ---
-title: about me
+title: About Me
 layout: info
 permalink: about
 tags: [banner]
