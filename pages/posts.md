@@ -1,5 +1,5 @@
 ---
-title: posts
+title: Posts
 layout: allposts
 permalink: posts
 tags: [banner]

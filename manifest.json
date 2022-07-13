@@ -1,0 +1,46 @@
+{
+    "name": "Alloc-Init",
+    "short_name": "Alloc-Init",
+    "start_url": "/",
+    "display": "minimal-ui",
+    "background_color": "#000000",
+    "description": "Blog for @WestonHanners",
+    "dir": "ltr",
+    "categories": "education,news",
+    "lang": "en",
+    "orientation": "any",
+    "scope": "/",
+    "theme_color": "#000000",
+    "icons": [
+        {
+            "src": "/assets/icon_48x48.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icon_72x72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icon_96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icon_144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icon_168x168.png",
+            "sizes": "168x168",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/icon_192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}
