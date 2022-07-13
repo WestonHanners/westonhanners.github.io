@@ -1,8 +1,14 @@
 <section class="content">
 <article>
-<h1 class="article-title"><a href={{ post.url }}>{{ post.title }}</a></h2>
+    <h1 class="article-title"><a href=
+        {% if post.link %}
+        {{ post.link }} 
+        {% else %} 
+        {{ post.url }}
+        {% endif %} >{{ post.title }}</a>
+    </h1>
 {% if post.date %}
-<div class="date-line">Published on {{ post.date | date_to_string: "ordinal", "US" }}</div>
+<div class="article-subtitle">Published on {{ post.date | date_to_string: "ordinal", "US" }}</div>
 {% endif %}
 <div>{{ post.content }}</div>
 </article>
