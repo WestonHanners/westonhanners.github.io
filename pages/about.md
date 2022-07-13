@@ -5,7 +5,9 @@ permalink: about
 tags: [banner]
 ---
 
-![Picture of Weston][1]
+![Weston's Headshot][1]
+
+# Who am I?
 
 My name is Weston Hanners and I am a Mobile Software Craftsman, Servant Leader
 for [Y Media Labs][2] in Downtown Indianapolis.
