@@ -9,7 +9,7 @@ tags: [banner]
 Here are some things of varying quality that I have made. Feel free to download and play with them. 
 
 - [Application Inclusivity Checklist][6]
-- [Dungeons and Dragons zone-based combat rules][5]
+- [D&D zone-based combat rules][5]
 - [Brain Fuck Interpreter][1]
 - [Merge Sort Playground][2]
 - [Binary Search Tree][3]
