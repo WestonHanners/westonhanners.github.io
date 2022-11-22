@@ -1,5 +1,5 @@
 ---
-title: Application Inclusivity Checklist
+title: a11y
 layout: page
 permalink: a11y
 tags: [banner]
