@@ -1,8 +1,8 @@
 ---
-title: a11y
-layout: page
+title: Application Inclusivity Checklist
+layout: info
 permalink: a11y
-tags: [banner]
+tags:
 ---
 
 **Note that this is more of a reminder of things to check. Good accessibility is much more than just filling out a checklist.** 
