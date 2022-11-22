@@ -32,6 +32,9 @@ collections:
   posts:
     permalink: /blog/:year.:month.:day
     output: true
+  rpg:
+    permalink: /rpg/:title
+    output: true
 
 sass:
   sass_dir: _sass   

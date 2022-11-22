@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include header.liquid %}
+<body>
+<header class="header">
+{% include banner.liquid %}
+</header>
+<section class="content">
+<h1 class="article-title">RPG Stuff</h1>
+<div class="article-subtitle">
+This is a list of content I built for D&D 5e.
+</div>
+{% for post in site.rpg %}
+<div class="article-list">
+<h2>
+    <a href=
+    {% if post.link %}
+    {{ post.link }} 
+    {% else %} 
+    {{ post.url }}
+    {% endif %} >{{ post.title }}</a>
+</h2>
+</div>
+{% endfor %}
+</section>
+{% include footer.liquid %}
+</body>
+</html>
