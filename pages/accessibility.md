@@ -1,6 +1,6 @@
 ---
 title: Application Inclusivity Checklist
-layout: info
+layout: post
 permalink: a11y
 tags:
 ---
