@@ -22,7 +22,7 @@ I hope the thoughts and learnings I share through this blog will help others
 like me along their journey.
 
 - [github](https://www.github.com/westonhanners)
-- [mastodon](https://friendlies.social/@weston)
+- [mastodon](https://techhub.social/@weston)
 - [youtube](https://www.youtube.com/kronusdark)
 - [linkedin](https://www.linkedin.com/in/lhanners)
 
