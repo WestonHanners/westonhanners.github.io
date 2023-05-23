@@ -26,5 +26,5 @@ like me along their journey.
 - [youtube](https://www.youtube.com/kronusdark)
 - [linkedin](https://www.linkedin.com/in/lhanners)
 
-[1]: /images/Avatar2023.jpeg#clip-circle
+[1]: https://www.gravatar.com/avatar/9904ca17b14cdc6fca59794cfec2adc1?&s=500#clip-circle
 [2]: https://yml.co
