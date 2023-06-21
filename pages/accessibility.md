@@ -24,7 +24,7 @@ tags:
 - Ensure Screen Reader and Switch Control can only access elements on-screen, not obscured.
 - Do not lock application orientation. All applications should be functional in portrait or landscape.
 - Avoid frequent layout changes throughout your app. Users can be more productive if common functionality is in the expected location.
-- The screen reader should start at the top right and move through the app towards the bottom in an expected manner.
+- The screen reader should start at the top left and move through the app towards the bottom in an expected manner.
 
 > 💡 Users without the ability to control their hands will commonly have their phone or iPad attached to their wheelchairs. Forcing them to get someone to rotate their device to use it is a bad experience
 
